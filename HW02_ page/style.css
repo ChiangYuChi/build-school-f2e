@@ -292,7 +292,14 @@
     width: 100%;
     margin-bottom: 20px;
     position: relative;
+    cursor: pointer;
 
+}
+
+.staff-pick .pick-list-item .pic:hover{
+    opacity: 0.2;
+    transition: all .5s ease;
+    
 }
 
 .pick-list-item .pic img {
