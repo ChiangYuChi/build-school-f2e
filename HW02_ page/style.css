@@ -17,7 +17,7 @@
 .wrapper .header {
     width: 100%;
     background-image: url(./img/main-bg.jpg);
-    position: relative;
+
 
 }
 
@@ -42,7 +42,7 @@
     text-align: left;
     box-sizing: border-box;
     position: relative;
-
+    cursor: pointer;
 }
 
 .menu-items a {
@@ -51,6 +51,11 @@
     font-size: 15px;
     font-weight: 500;
     line-height: 22.5px;
+    transition: all ease-in 0.4s;
+}
+
+.menu-items a:hover {
+    color: #518432;
 }
 
 .menu-items span {
@@ -98,6 +103,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    cursor: pointer;
 }
 
 #navbar ul .fas,
@@ -107,7 +113,9 @@
     line-height: 40px;
     padding: 8px;
     color: black;
+    cursor: pointer;
 }
+
 
 #navbar ul .count {
     font-size: 12px;
@@ -296,10 +304,10 @@
 
 }
 
-.staff-pick .pick-list-item .pic:hover{
+.staff-pick .pick-list-item .pic:hover {
     opacity: 0.2;
     transition: all .5s ease;
-    
+
 }
 
 .pick-list-item .pic img {
@@ -361,7 +369,7 @@
 /* video sec */
 .video {
     width: 100%;
-    background-image: url(./img/video-bg.png);
+    background-image: url(./img/video-bg1.png);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -374,6 +382,46 @@
     padding: 90px 0;
     position: relative;
 }
+
+.video-content .pic {
+    width: 690px;
+    height: 405px;
+    background-image: url(./img/video-bg2.png);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-content .pic a {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    border: 1px solid #ffffff;
+    border-radius: 50%;
+    transition: all .3s;
+    cursor: pointer;
+}
+
+
+.video-content .pic a>svg {
+    width: 30%;
+    height: 30%;
+    fill: #ffffff;
+}
+
+.video-content .pic a:hover {
+    background-color: #518432;
+    border: none;
+}
+
 
 .video-info .info-container {
     width: 535px;
@@ -408,6 +456,7 @@
     text-decoration: none;
     letter-spacing: 4px;
 }
+
 /* instagram sectoion */
 .shop-instagram {
     width: 1440px;
@@ -436,7 +485,7 @@
     display: flex;
     justify-content: center;
     margin-bottom: 45px;
-    
+
 }
 
 .insta-pic {
@@ -446,7 +495,7 @@
     cursor: pointer;
 }
 
-.insta-pic:hover{
+.insta-pic:hover {
     filter: brightness(0.3);
 }
 
@@ -454,6 +503,7 @@
     width: 100%;
     vertical-align: middle;
 }
+
 /* footer */
 .footer {
     padding-top: 47px;
@@ -544,3 +594,4 @@
     z-index: 999;
     box-shadow: 0px 2px 5px -2px rgba(0, 0, 0, 0.1);
 }
+
