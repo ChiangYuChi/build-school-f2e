@@ -408,7 +408,9 @@
     border-radius: 50%;
     transition: all .3s;
     cursor: pointer;
+
 }
+
 
 
 .video-content .pic a>svg {
@@ -446,8 +448,27 @@
     align-items: center;
     border: 1px solid black;
     margin-top: 30px;
+    position: relative;
+    overflow: hidden;
+    transition: all .3s;
+    cursor: pointer;
 }
 
+.video .video-info .banner-button:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #518432;
+    color: #fff;
+    transform: translateY(-100%);
+    transition: all .3s;
+}
+
+.video .video-info .banner-button:hover:before{
+    transform: translateY(0);
+}
 
 .video .video-info .banner-button a {
     color: black;
@@ -455,6 +476,7 @@
     box-sizing: border-box;
     text-decoration: none;
     letter-spacing: 4px;
+    z-index:10;
 }
 
 /* instagram sectoion */
