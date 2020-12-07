@@ -183,8 +183,8 @@
     letter-spacing: 4px;
 }
 
-.arrows .arrow-left,
-.arrows .arrow-right {
+.arrows .arrow-prev,
+.arrows .arrow-next {
     position: absolute;
     width: 60px;
     height: 60px;
@@ -193,14 +193,14 @@
     align-items: center;
 }
 
-.arrows .arrow-left {
+.arrows .arrow-next {
     background-color: white;
     top: 50%;
     left: 0;
     box-shadow: 1px 2px 6px 4px rgba(53, 57, 68, 0.2);
 }
 
-.arrows .arrow-right {
+.arrows .arrow-next {
     background-color: white;
     top: 50%;
     right: 0;
@@ -598,7 +598,13 @@
     text-align: center;
     border-radius: 100%;
     margin: 5px;
+    cursor: pointer;
 }
+
+
+
+
+
 
 .copyright {
     margin-top: 15px;
