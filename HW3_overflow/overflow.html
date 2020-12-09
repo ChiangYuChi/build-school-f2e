@@ -1,43 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>overflow練習</title>
     <style>
-        body{
-            background-color:rgba(0, 0, 0, 0.4);
-        }
-        .wrap{
-            display:flex;
-           
-           
+        body {
+            background-color: rgba(0, 0, 0, 0.4);
         }
 
-        .item{
+        .wrap {
+            display: flex;
+
+
+        }
+
+        .item {
             border-bottom: 10px solid rgb(0, 181, 153);
             width: 480px;
             height: 350px;
             background-size: cover;
             margin: 0 15px;
-           overflow: hidden;
+            overflow: hidden;
         }
+
         .item:nth-child(1) {
-           
+
             background-image: url(./img/man-shows-gesture-great-idea_10045-637.jpg);
-           
+
         }
+
         .item:nth-child(2) {
-          
+
             background-image: url(./img/pointing-finger-up-with-successful-idea-exited-success-thinks-number-one-concept_263070-240.jpg);
-           
-           
+
+
         }
+
         .item:nth-child(3) {
-     
+
             background-image: url(./img/photo-1576834967753-ad2cf1cc8d19.jpg);
-          
-           
+
+
         }
 
         .item .text {
@@ -46,24 +51,28 @@
             background-color: rgba(0, 0, 0, 0.4);
             color: white;
             position: relative;
-
         }
 
         .text .content {
-            width: 100%;
+            width: 95%;
             height: 50%;
             position: absolute;
             bottom: -30%;
-            left: 0%;
             transition: all 1s;
             text-align: center;
             font-size: 20px;
             line-height: 40px;
-            padding: 5px;
+            margin-left: 2%;
+
+        }
+
+        .content .teacher-description {
+            text-align: justify;
+           
         }
 
         .item:hover .content {
-            bottom: 20%;
+            bottom: 22%;
         }
     </style>
 </head>
@@ -100,9 +109,9 @@
                 </div>
             </div>
         </div>
-       
+
     </div>
-    
+
 </body>
 
 </html>
