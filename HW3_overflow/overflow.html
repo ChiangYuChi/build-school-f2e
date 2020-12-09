@@ -5,13 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>overflow練習</title>
     <style>
-        .item {
-            width: 500px;
-            height: 350px;
-            background-image: url(./img/man-shows-gesture-great-idea_10045-637.jpg);
-            background-size: cover;
-            margin: 0 auto;
+        body{
+            background-color:rgba(0, 0, 0, 0.4);
+        }
+        .wrap{
+            display:flex;
+           
+           
+        }
 
+        .item{
+            border-bottom: 10px solid rgb(0, 181, 153);
+            width: 480px;
+            height: 350px;
+            background-size: cover;
+            margin: 0 15px;
+           overflow: hidden;
+        }
+        .item:nth-child(1) {
+           
+            background-image: url(./img/man-shows-gesture-great-idea_10045-637.jpg);
+           
+        }
+        .item:nth-child(2) {
+          
+            background-image: url(./img/pointing-finger-up-with-successful-idea-exited-success-thinks-number-one-concept_263070-240.jpg);
+           
+           
+        }
+        .item:nth-child(3) {
+     
+            background-image: url(./img/photo-1576834967753-ad2cf1cc8d19.jpg);
+          
+           
         }
 
         .item .text {
@@ -27,10 +53,13 @@
             width: 100%;
             height: 50%;
             position: absolute;
-            bottom: -37%;
+            bottom: -30%;
             left: 0%;
             transition: all 1s;
             text-align: center;
+            font-size: 20px;
+            line-height: 40px;
+            padding: 5px;
         }
 
         .item:hover .content {
@@ -40,16 +69,40 @@
 </head>
 
 <body>
-    <div class="item">
-        <div class="text">
-            <div class="content">
-                <div class="name">Mary Jane</div>
-                <div class="course-name">職場必備的 Word 關鍵技法 - 入門</div>
-                <div class="teacher-description">這堂課真的很棒，真的很適合想要入門 Word 的新手；這樣的花費得到對於 Word
-                    如此的認識，真的是物超所值，也可以讓人更想了解Excel可以應用到甚麼樣的地步</div>
+    <div class="wrap">
+        <div class="item">
+            <div class="text">
+                <div class="content">
+                    <div class="name">Mary Jane</div>
+                    <div class="course-name">職場必備的 Word 關鍵技法 - 入門</div>
+                    <div class="teacher-description">這堂課真的很棒，真的很適合想要入門 Word 的新手；這樣的花費得到對於 Word
+                        如此的認識，真的是物超所值，也可以讓人更想了解Excel可以應用到甚麼樣的地步</div>
+                </div>
             </div>
         </div>
+        <div class="item">
+            <div class="text">
+                <div class="content">
+                    <div class="name">Mary Jane</div>
+                    <div class="course-name">職場必備的 Word 關鍵技法 - 入門</div>
+                    <div class="teacher-description">這堂課真的很棒，真的很適合想要入門 Word 的新手；這樣的花費得到對於 Word
+                        如此的認識，真的是物超所值，也可以讓人更想了解Excel可以應用到甚麼樣的地步</div>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="text">
+                <div class="content">
+                    <div class="name">Mary Jane</div>
+                    <div class="course-name">職場必備的 Word 關鍵技法 - 入門</div>
+                    <div class="teacher-description">這堂課真的很棒，真的很適合想要入門 Word 的新手；這樣的花費得到對於 Word
+                        如此的認識，真的是物超所值，也可以讓人更想了解Excel可以應用到甚麼樣的地步</div>
+                </div>
+            </div>
+        </div>
+       
     </div>
+    
 </body>
 
 </html>
