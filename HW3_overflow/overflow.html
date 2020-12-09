@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>overflow練習</title>
+    <style>
+        .item {
+            width: 500px;
+            height: 350px;
+            background-image: url(./img/man-shows-gesture-great-idea_10045-637.jpg);
+            background-size: cover;
+            margin: 0 auto;
+
+        }
+
+        .item .text {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            color: white;
+            position: relative;
+
+        }
+
+        .text .content {
+            width: 100%;
+            height: 50%;
+            position: absolute;
+            bottom: -37%;
+            left: 0%;
+            transition: all 1s;
+            text-align: center;
+        }
+
+        .item:hover .content {
+            bottom: 20%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="item">
+        <div class="text">
+            <div class="content">
+                <div class="name">Mary Jane</div>
+                <div class="course-name">職場必備的 Word 關鍵技法 - 入門</div>
+                <div class="teacher-description">這堂課真的很棒，真的很適合想要入門 Word 的新手；這樣的花費得到對於 Word
+                    如此的認識，真的是物超所值，也可以讓人更想了解Excel可以應用到甚麼樣的地步</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
