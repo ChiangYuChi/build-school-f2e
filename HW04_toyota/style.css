@@ -1,0 +1,207 @@
+@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500&display=swap);
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Noto Sans TC", sans-serif;
+}
+
+body {
+  padding-top: 200px;
+}
+
+.wrap {
+  width: 1200px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.container {
+  padding-bottom: 80px;
+}
+
+.item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+}
+
+.item > :first-child {
+  margin: -10% -20% 0 0;
+}
+
+.title {
+  width: 400px;
+  color: white;
+  position: relative;
+  z-index: 4;
+  width: 350px;
+  height: 120px;
+}
+
+.title .top {
+  background-color: #cf0202;
+  font-weight: 300;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.title .top .rotate {
+  color: white;
+  font-size: 100px;
+  -webkit-writing-mode: vertical-lr;
+      -ms-writing-mode: tb-lr;
+          writing-mode: vertical-lr;
+}
+
+.title .top .main-title {
+  color: white;
+  font-size: 45px;
+  text-align: end;
+  padding-top: 20px;
+}
+
+.title .sub-title {
+  background-color: black;
+  line-height: 30px;
+  padding: 20px 20px 40px 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.title .sub-title h2 {
+  font-size: 21px;
+  font-weight: 500;
+}
+
+.title .sub-title p {
+  font-size: 17px;
+  font-weight: 300;
+}
+
+.detail {
+  background-color: #eeeeee;
+  width: 680px;
+  padding: 15px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+  margin: -2% 0 0 15%;
+  z-index: 3;
+}
+
+.detail .detail-title {
+  font-size: 18px;
+  color: #ba0404;
+}
+
+.detail .detail-list ul {
+  list-style: none;
+}
+
+.detail .detail-list ul li:nth-child(odd) {
+  width: 130px;
+  background-color: black;
+  color: white;
+  font-size: 13px;
+  font-weight: 300;
+  text-align: center;
+  padding: 2px 5px;
+}
+
+.detail .detail-list ul li:nth-child(even) {
+  text-indent: -15px;
+  padding-left: 25px;
+  font-size: 16px;
+  font-weight: 300;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.detail .detail-list ul li:nth-child(even):before {
+  content: '•';
+  color: red;
+}
+
+.pic img {
+  width: 100%;
+  display: block;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.box {
+  width: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #ba0404;
+  padding: 5px;
+  position: absolute;
+  z-index: 4;
+  top: 180px;
+  right: 240px;
+}
+
+.box .fas {
+  font-size: 20px;
+  color: white;
+}
+
+.color-box {
+  width: 450px;
+  height: 300px;
+  background-color: whitesmoke;
+  margin: -8% 0 0 -28%;
+  z-index: 1;
+}
+
+.wrap .container:nth-of-type(even) .item .title {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+  margin: -10% 0 0 -14%;
+}
+
+.wrap .container:nth-of-type(odd) .item .title {
+  margin: -10% -10% 0 -14%;
+}
+
+.wrap .container:nth-of-type(even) .detail {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+  margin: -2% 0 0 27%;
+}
+
+.wrap .container:nth-of-type(even) .color-box {
+  height: 410px;
+}
+
+.wrap .container:nth-of-type(even) .box {
+  left: 90px;
+}
+/*# sourceMappingURL=style.css.map */

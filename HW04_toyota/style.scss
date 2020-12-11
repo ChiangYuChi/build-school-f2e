@@ -1,0 +1,224 @@
+@import url(https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500&display=swap);
+
+$dark-red: rgb(186, 4, 4);
+$black: rgb(0, 0, 0);
+$grey:rgb(238, 238, 238);
+$backgray:rgb(245, 245, 245);
+$Noto-Sans : 'Noto Sans TC',
+sans-serif;
+
+* {
+    margin: 0;
+    padding: 0;
+
+    font-family: $Noto-Sans;
+}
+
+body {
+    padding-top: 200px;
+
+}
+
+.wrap {
+    width: 1200px;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+
+
+
+.container {
+    padding-bottom: 80px;
+
+}
+
+.item {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.item>:first-child {
+
+    margin: -10% -20% 0 0;
+}
+
+.title {
+    width: 400px;
+    color: white;
+
+    position: relative;
+    z-index: 4;
+    width: 350px;
+    height: 120px;
+
+    .top {
+        background-color: rgb(207, 2, 2);
+        font-weight: 300;
+
+        display: flex;
+
+        .rotate {
+            color: white;
+            font-size: 100px;
+            writing-mode: vertical-lr;
+
+
+
+        }
+
+        .main-title {
+
+
+            color: white;
+            font-size: 45px;
+            text-align: end;
+
+            padding-top: 20px;
+        }
+    }
+
+    .sub-title {
+        background-color: $black;
+        line-height: 30px;
+        padding: 20px 20px 40px 20px;
+        box-sizing: border-box;
+
+        h2 {
+            font-size: 21px;
+            font-weight: 500;
+        }
+
+        p {
+            font-size: 17px;
+            font-weight: 300;
+        }
+    }
+
+}
+
+
+
+
+
+
+
+
+
+.detail {
+    background-color: $grey;
+    width: 680px;
+    padding: 15px;
+    box-sizing: border-box;
+    position: relative;
+    margin: -2% 0 0 15%;
+    z-index: 3;
+
+    .detail-title {
+        font-size: 18px;
+        color: $dark-red;
+    }
+
+    .detail-list {
+
+        ul {
+
+            list-style: none;
+
+
+            li:nth-child(odd) {
+                width: 130px;
+                background-color: black;
+                color: white;
+                font-size: 13px;
+                font-weight: 300;
+                text-align: center;
+                padding: 2px 5px;
+            }
+
+            li:nth-child(even) {
+                text-indent: -15px;
+                padding-left: 25px;
+                font-size: 16px;
+                font-weight: 300;
+                box-sizing: border-box;
+
+                &:before {
+                    content: '•';
+                    color: red;
+                }
+            }
+
+        }
+    }
+}
+
+.pic {
+
+    img {
+        width: 100%;
+        display: block;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+
+    }
+
+
+
+
+
+}
+
+.box {
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $dark-red;
+    padding: 5px;
+    position: absolute;
+    z-index: 4;
+    top: 180px;
+    right: 240px;
+
+    .fas {
+        font-size: 20px;
+        color: white;
+    }
+}
+
+.color-box {
+    width: 450px;
+    height: 300px;
+    background-color: $backgray;
+    margin: -8% 0 0 -28%;
+    z-index: 1;
+}
+
+.wrap .container:nth-of-type(even) .item .title {
+    order: 1;
+    margin: -10% 0 0 -14%;
+}
+
+.wrap .container:nth-of-type(odd) .item .title {
+    margin: -10% -10% 0 -14%;
+}
+
+.wrap .container:nth-of-type(even) .detail {
+    order: 1;
+    margin: -2% 0 0 27%;
+}
+
+.wrap .container:nth-of-type(even) .color-box {
+    height: 410px;
+}
+
+.wrap .container:nth-of-type(even) .box {
+    left: 90px;
+}
