@@ -187,14 +187,14 @@ body {
 }
 
 .wrap .container:nth-of-type(odd) .item .title {
-  margin: -10% -10% 0 -14%;
+  margin: -8% -10% 0 -1%;
 }
 
 .wrap .container:nth-of-type(even) .detail {
   -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
           order: 1;
-  margin: -2% 0 0 27%;
+  margin: -2% 0 0 43%;
 }
 
 .wrap .container:nth-of-type(even) .color-box {
@@ -203,5 +203,9 @@ body {
 
 .wrap .container:nth-of-type(even) .box {
   left: 90px;
+}
+
+.wrap .container:nth-of-type(odd) .box {
+  right: 180px;
 }
 /*# sourceMappingURL=style.css.map */

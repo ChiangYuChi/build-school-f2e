@@ -22,7 +22,6 @@ body {
 .wrap {
     width: 1200px;
     margin: 0 auto;
-
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -207,12 +206,12 @@ body {
 }
 
 .wrap .container:nth-of-type(odd) .item .title {
-    margin: -10% -10% 0 -14%;
+    margin: -8% -10% 0 -1%;
 }
 
 .wrap .container:nth-of-type(even) .detail {
     order: 1;
-    margin: -2% 0 0 27%;
+    margin: -2% 0 0 43%;
 }
 
 .wrap .container:nth-of-type(even) .color-box {
@@ -221,4 +220,8 @@ body {
 
 .wrap .container:nth-of-type(even) .box {
     left: 90px;
+}
+
+.wrap .container:nth-of-type(odd) .box {
+    right: 180px;
 }
