@@ -1,0 +1,340 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500&display=swap");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*===
+card one
+===*/
+.card-one-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: #2c3238;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.card-one-container .contact-detail,
+.card-one-container .contact-submit {
+  width: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Montserrat", sans-serif;
+}
+
+.card-one-container .contact-detail .content,
+.card-one-container .contact-submit .content {
+  padding: 30px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.card-one-container .contact-detail .content span,
+.card-one-container .contact-submit .content span {
+  font-size: 12px;
+  color: #1a81fd;
+}
+
+.card-one-container .contact-detail .content h2,
+.card-one-container .contact-submit .content h2 {
+  font-size: 32px;
+  line-height: 38px;
+  color: white;
+  padding: 25px 0;
+}
+
+.card-one-container .contact-detail .content p,
+.card-one-container .contact-submit .content p {
+  font-size: 18px;
+  color: white;
+  line-height: 25px;
+  padding-bottom: 27px;
+}
+
+.card-one-container .contact-detail .content p:nth-of-type(1),
+.card-one-container .contact-submit .content p:nth-of-type(1) {
+  font-size: 14px;
+}
+
+.card-one-container .contact-detail .content p .fas,
+.card-one-container .contact-submit .content p .fas {
+  padding-right: 20px;
+  color: #4ce6fe;
+}
+
+.card-one-container .contact-detail .content label,
+.card-one-container .contact-submit .content label {
+  font-size: 14px;
+  padding-bottom: 10px;
+  color: white;
+}
+
+.card-one-container .contact-detail .content .customer-request,
+.card-one-container .contact-submit .content .customer-request {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.card-one-container .contact-detail .content .customer-request input:focus,
+.card-one-container .contact-submit .content .customer-request input:focus {
+  outline: none;
+}
+
+.card-one-container .contact-detail .content .customer-request input[type=text],
+.card-one-container .contact-submit .content .customer-request input[type=text] {
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid white;
+  width: 450px;
+}
+
+.card-one-container .contact-detail .content .customer-request input[type=button],
+.card-one-container .contact-submit .content .customer-request input[type=button] {
+  width: 150px;
+  background-color: #1a81fd;
+  border: none;
+  padding: 14px 0;
+  font-size: 13px;
+  border-radius: 30px;
+  color: white;
+}
+
+/*===
+card two
+===*/
+.card-two-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  font-family: "Montserrat", sans-serif;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.card-two-container .item {
+  width: 350px;
+  background-color: #5928dc;
+  padding: 90px 10px;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  color: white;
+}
+
+.card-two-container .item .box {
+  background-color: #1a81fd;
+  width: 60%;
+  position: absolute;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  top: 10px;
+  right: -90px;
+  font-size: 13px;
+  line-height: 23px;
+  letter-spacing: 1px;
+  color: white;
+}
+
+.card-two-container .item .fas {
+  font-size: 45px;
+  padding-bottom: 20px;
+}
+
+.card-two-container .item h2 {
+  font-size: 16px;
+  line-height: 21px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding-bottom: 15px;
+}
+
+.card-two-container .item .price {
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.card-two-container .item .price .price-value {
+  font-size: 48px;
+}
+
+.card-two-container .item .price .price-prefix,
+.card-two-container .item .price .price-suffix {
+  font-size: 14px;
+}
+
+.card-two-container .item .price .price-prefix {
+  position: absolute;
+  top: 0;
+  left: 25%;
+}
+
+.card-two-container .item .description {
+  padding-bottom: 50px;
+}
+
+.card-two-container .item .description p {
+  font-size: 14px;
+  line-height: 25px;
+  padding: 0 30px;
+}
+
+.card-two-container .item a {
+  text-decoration: none;
+  border: 1px solid white;
+  padding: 19px 40px;
+  border-radius: 40px;
+  text-transform: uppercase;
+  color: white;
+}
+
+.card-two-container .item a:hover {
+  background-color: white;
+  color: #5928dc;
+}
+
+/*===
+card three
+===*/
+.card-three-container {
+  font-family: "Montserrat", sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+}
+
+.card-three-container .intro {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.card-three-container .intro .item-box {
+  width: 30%;
+  text-align: left;
+  padding: 35px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: white;
+}
+
+.card-three-container .intro .item-box .fas {
+  font-size: 50px;
+  padding-bottom: 30px;
+}
+
+.card-three-container .intro .item-box:nth-child(1) {
+  background-color: rgba(18, 123, 251, 0.8);
+}
+
+.card-three-container .intro .item-box:nth-child(2) {
+  background-color: rgba(18, 123, 251, 0.9);
+}
+
+.card-three-container .intro .item-box:nth-child(3) {
+  background-color: #127bfb;
+}
+
+.card-three-container .intro .item-box h2 {
+  font-size: 18px;
+  padding-bottom: 30px;
+  letter-spacing: 3.8px;
+}
+
+.card-three-container .intro .item-box p {
+  font-size: 14px;
+  line-height: 25px;
+  padding-bottom: 20px;
+}
+/*# sourceMappingURL=all.css.map */
