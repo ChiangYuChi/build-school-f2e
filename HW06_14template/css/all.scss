@@ -7,7 +7,9 @@ $color_purpleBlue:rgba(26, 129, 253, 1);
 $color_tiffanyBlue:rgb(76, 230, 254);
 $color_skyBlue:rgba(26, 129, 253, 1);
 $color_cardBg:rgba(89, 40, 220, 1);
+$color_brown:rgb(195, 182, 149);
 $font-Montserrat:'Montserrat',
+
 sans-serif;
 
 
@@ -213,12 +215,13 @@ card two
 card three
 ===*/
 .card-three-container {
-font-family: $font-Montserrat;
-display:flex;
-justify-content: center;
-align-items: center;
- 
-  height: 100vh;
+    font-family: $font-Montserrat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+
     .intro {
         display: flex;
         justify-content: center;
@@ -226,31 +229,37 @@ align-items: center;
 
         .item-box {
             width: 30%;
-         
+
             text-align: left;
             padding: 35px;
             box-sizing: border-box;
             color: white;
-            .fas{
+
+            .fas {
                 font-size: 50px;
                 padding-bottom: 30px;
 
             }
-            &:nth-child(1){
-                background-color:rgba(18,123,251, 0.8);
+
+            &:nth-child(1) {
+                background-color: rgba(18, 123, 251, 0.8);
             }
-            &:nth-child(2){
-                background-color:rgba(18,123,251, 0.9);
+
+            &:nth-child(2) {
+                background-color: rgba(18, 123, 251, 0.9);
             }
-            &:nth-child(3){
-                background-color: rgba(18,123,251, 1);
+
+            &:nth-child(3) {
+                background-color: rgba(18, 123, 251, 1);
             }
-            h2{
-                font-size:18px;
+
+            h2 {
+                font-size: 18px;
                 padding-bottom: 30px;
                 letter-spacing: 3.8px;
             }
-            p{
+
+            p {
                 font-size: 14px;
                 line-height: 25px;
                 padding-bottom: 20px;
@@ -258,4 +267,81 @@ align-items: center;
         }
     }
 
+}
+
+/*===
+card fifteen
+===*/
+.card-fifteen-container {
+    font-family: $font-Montserrat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+background-color: $color_darkGray;
+    .testimony {
+        width: 50%;
+
+
+        .message-box {
+            background-color: $color_brown;
+            padding: 30px;
+            color: white;
+            font-weight: 300;
+            font-style: italic;
+            font-size: 20px;
+            position: relative;
+            margin-bottom: 40px;
+
+            &:after {
+                position: absolute;
+                content: ' ';
+                width: 0;
+                height: 0;
+                border-width: 20px;
+                border-style: solid;
+                border-color: transparent $color_brown transparent transparent;
+                transform: rotate(45deg);
+                top: 85%;
+                left: 5%;
+            }
+        }
+
+        .people {
+
+            
+            display: flex;
+            padding-left: 14px;
+
+            .customer-img {
+                display: inline-block;
+                position: relative;
+                width: 80px;
+                height: 80px;
+                overflow: hidden;
+                border-radius: 50%;
+
+                img {
+                    width: auto;
+                    height: 100%;
+                    margin-left: -18%;
+                }
+
+            }
+            .customer{
+                
+                display:flex;
+                
+                justify-content: center;
+                flex-direction: column;
+                padding: 20px;
+                font-size: 13px;
+                line-height: 20px;
+                color: $color_brown;
+                
+            }
+
+        }
+    }
 }
