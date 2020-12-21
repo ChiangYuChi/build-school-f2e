@@ -294,6 +294,8 @@ card fifteen
             font-size: 20px;
             position: relative;
             margin-bottom: 40px;
+            
+
             // overflow: hidden;
             &:after {
                 position: absolute;
@@ -308,24 +310,15 @@ card fifteen
                 left: 5%;
             }
 
-            // &::before {
-            //     content: "❝";
-            //     position: absolute;
-            //     top: 70%;
-            //     color: #ffffff80;
-            //     font-size: 90px;
-            //     right: 20px;
-            //     font-weight: bold;
-               
-            // }
+            
 
-            .text{
-                position:relative;
+            .text {
+                position: relative;
                 overflow: hidden;
                 padding-bottom: 0px;
-                 
+
             }
-           
+
         }
 
         .people {
@@ -366,6 +359,12 @@ card fifteen
 
         }
 
+
+    }
+
+    .dialog-box {
+        display: flex;
+        flex-direction: column-reverse;
 
     }
 }

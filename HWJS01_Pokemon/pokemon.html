@@ -7,16 +7,22 @@
 </head>
 <body>
     <h1>寶可夢圖鑑</h1>
-    <div id="container"></div>
     <button onclick="fetchPokemon()">載入寶可夢圖鑑列表</button>
-    <!-- <button onclick="fetchPokemon_appendChild()">載入寶可夢圖鑑appendChild</button> -->
+    <button onclick="fetchPokemon_appendChild()">載入寶可夢圖鑑appendChild</button>
+    <button onclick="reset()">Reset</button>
+    <div id="container"></div>
     <script>
         var container = document.getElementById("container");
-        window.onload=appendPokemon();
-        function appendPokemon(){
-            let img = document.createElement('img');
-            img.setAttribute("src","https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png");
-            container.appendChild(img);
+        function reset(){
+           container.innerHTML= '';
+        }
+        function fetchPokemon_appendChild(){
+            for(let i=1;i<890;i++){
+                let img = document.createElement('img');
+                fileName=i.toString().padStart(3,'0');
+                img.setAttribute("src",`https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${fileName}.png`);
+                container.appendChild(img);
+            }
         }
         function fetchPokemon(){
             let pokemons='';
