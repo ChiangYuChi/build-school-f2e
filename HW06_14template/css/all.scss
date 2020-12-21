@@ -279,7 +279,8 @@ card fifteen
     align-items: center;
 
     height: 100vh;
-background-color: $color_darkGray;
+    background-color: $color_darkGray;
+
     .testimony {
         width: 50%;
 
@@ -293,7 +294,7 @@ background-color: $color_darkGray;
             font-size: 20px;
             position: relative;
             margin-bottom: 40px;
-
+           overflow: hidden;
             &:after {
                 position: absolute;
                 content: ' ';
@@ -303,14 +304,24 @@ background-color: $color_darkGray;
                 border-style: solid;
                 border-color: transparent $color_brown transparent transparent;
                 transform: rotate(45deg);
-                top: 85%;
+                top: 80%;
                 left: 5%;
+            }
+
+            &::before {
+                content: "❝";
+                position: absolute;
+                top: 65%;
+                color: #ffffff80;
+                font-size: 120px;
+                right: 20px;
+                font-weight: bold;
             }
         }
 
         .people {
 
-            
+
             display: flex;
             padding-left: 14px;
 
@@ -329,19 +340,23 @@ background-color: $color_darkGray;
                 }
 
             }
-            .customer{
-                
-                display:flex;
-                
+
+            .customer {
+
+                display: flex;
+
                 justify-content: center;
                 flex-direction: column;
                 padding: 20px;
                 font-size: 13px;
                 line-height: 20px;
                 color: $color_brown;
-                
+
             }
 
+
         }
+
+
     }
 }
