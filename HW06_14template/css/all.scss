@@ -1,7 +1,7 @@
 @import "_reset.scss";
 //fonts
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap');
 $color_darkGray:rgb(44, 50, 56);
 $color_purpleBlue:rgba(26, 129, 253, 1);
 $color_tiffanyBlue:rgb(76, 230, 254);
@@ -9,9 +9,9 @@ $color_skyBlue:rgba(26, 129, 253, 1);
 $color_cardBg:rgba(89, 40, 220, 1);
 $color_brown:rgb(195, 182, 149);
 $font-Montserrat:'Montserrat',
-
 sans-serif;
-
+$font-Lato:'Lato',
+sans-serif;
 
 /*===
 card one
@@ -270,6 +270,106 @@ card three
 }
 
 /*===
+card four
+===*/
+.card-four-container {
+    background-color: $color_cardBg;
+    height: 100vh;
+
+
+    font-family: $font-Lato;
+
+    .shape {
+        clip-path: ellipse(65% 105% at 46% -18%);
+        -webkit-clip-path: ellipse(65% 105% at 56% -18%);
+        height: 595px;
+       
+        background: white;
+
+
+
+    }
+
+    .item {
+        position: absolute;
+        left: 50%;
+        top: 45%;
+        transform: translate(-50%, -55%);
+
+
+
+        display: flex;
+        width: 1200px;
+
+
+        .pic {
+            width: 65%;
+         
+
+            img {
+                width: 100%;
+
+                vertical-align: top;
+            }
+        }
+
+        .txt {
+            width: 35%;
+           
+            padding: 50px 30px 50px 50px;
+
+            h1 {
+                font-weight: 400;
+                font-size: 16px;
+                color: $color_darkGray;
+                text-transform: uppercase;
+                padding-bottom: 70px;
+
+                &:before {
+                    content: '';
+                    width: 100px;
+                    height: 2px;
+                    background-color: $color_cardBg;
+                    position: absolute;
+                    top: 20%;
+                }
+
+            }
+
+            p {
+                font-weight: 300;
+                font-size: 16px;
+                line-height: 30px;
+                padding-bottom: 30px;
+            }
+            a{
+              
+               padding: 15px 40px;
+              
+               border: 1px solid $color_cardBg;
+               border-radius: 5px;
+               text-decoration: none;
+               color: white;
+               background-color: $color_cardBg;
+               &:hover{
+                background-color:white;
+                color: $color_cardBg;
+               }
+               &:nth-of-type(1){
+                   margin-right: 30px;
+                   background-color:white;
+                   color: $color_cardBg;
+                   &:hover{
+                    background-color: $color_cardBg;
+                    color: white;
+                   }
+               }
+            }
+        }
+    }
+}
+
+/*===
 card fifteen
 ===*/
 .card-fifteen-container {
@@ -279,7 +379,7 @@ card fifteen
     align-items: center;
 
     height: 100vh;
-    background-color: $color_darkGray;
+
 
     .testimony {
         width: 50%;
@@ -294,30 +394,30 @@ card fifteen
             font-size: 20px;
             position: relative;
             margin-bottom: 40px;
-            
 
-            // overflow: hidden;
+
+
             &:after {
-                position: absolute;
                 content: ' ';
-                width: 0;
-                height: 0;
                 border-width: 20px;
-                border-style: solid;
-                border-color: transparent $color_brown transparent transparent;
-                transform: rotate(45deg);
-                top: 80%;
-                left: 5%;
+                border-top: 15px solid $color_brown;
+                border-right: 15px solid transparent;
+                top: 100%;
+                bottom: -30px;
+                left: 7%;
+                position: absolute;
             }
 
-            
-
-            .text {
-                position: relative;
-                overflow: hidden;
-                padding-bottom: 0px;
-
+            &::before {
+                position: absolute;
+                content: "❝";
+                bottom: -70px;
+                color: #ffffff80;
+                font-size: 120px;
+                right: 30px;
             }
+
+
 
         }
 
@@ -362,9 +462,5 @@ card fifteen
 
     }
 
-    .dialog-box {
-        display: flex;
-        flex-direction: column-reverse;
 
-    }
 }
