@@ -22,6 +22,7 @@ function getPokemonJSON() {
 function TransformData(dataArray) {
     dataArray.forEach(item => {
         let id = item.id.toString().padStart(3, "0");
+        let type = item.type[0]; 
         let name = item.name.chinese;
         let hp = item.base.HP;
         let attack = item.base.Attack;
@@ -32,6 +33,7 @@ function TransformData(dataArray) {
         let img = `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${id}.png`;
         let pokemon = {
             Id: id,
+            Type: type,
             Name: name,
             Hp: hp,
             Attack: attack,
@@ -41,6 +43,7 @@ function TransformData(dataArray) {
             Img: img
         };
         pokemonArrayNew.push(pokemon);
+        console.log(pokemonArrayNew);
     });
 }
 
@@ -50,9 +53,10 @@ function genCard(pokemonArrayNew) {
     pokemonArrayNew.forEach(item => {
         let card = document.querySelector('#cardMonster');
         let cloneContent = card.content.cloneNode(true);1
-        cloneContent.querySelector('h5').innerText = item.Name;
+      
         cloneContent.querySelector("img").src =
             `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${item.Id}.png`;
+        cloneContent.querySelector('.card-text').innerText = item.Type;
         cloneContent.querySelector('.btn').setAttribute('data-defense', `${item.Defense}`);
         cloneContent.querySelector('.btn').setAttribute('data-name', `${item.Name}`);
         cloneContent.querySelector('.btn').setAttribute('data-hp', `${item.Hp}`);
@@ -60,6 +64,8 @@ function genCard(pokemonArrayNew) {
         cloneContent.querySelector('.btn').setAttribute('data-spa', `${item.SpAttack}`);
         cloneContent.querySelector('.btn').setAttribute('data-spd', `${item.SpDefense}`);
         cloneContent.querySelector('.btn').setAttribute('data-id', `${item.Id}`);
+        cloneContent.querySelector('.btn').innerText = `${item.Name}`;
+
         row.appendChild(cloneContent);
 
 

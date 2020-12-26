@@ -9,62 +9,144 @@
         integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <title>寶可夢圖鑑</title>
     <style>
-        .container-fluid{
-            max-width: 1200px;
-            
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&display=swap');
+
+        :root {
+            --background-white: #fffffd;
+            --background-blue: #7dabdc;
+            --pokeball-red: #fd5365;
+            --pokeball-grey: #f0f0f0;
+            --pokeball-black: #615e69;
+        }
+
+        .jumbotron .pic {
+            width: 30%;
+            margin: 0 auto;
+
+
+        }
+
+        .jumbotron .pic img {
+            width: 100%;
+        }
+
+        .jumbotron {
+            background-color: rgb(255, 203, 2);
+        }
+
+        .card-body .card-text {
+            background-color: var(--pokeball-red);
+            border-radius: 30px;
+            font-size: 14px;
+            height: 24px;
+            line-height: 14px;
+            margin-top: 20px;
+            color: var(--pokeball-black);
+           
+        }
+
+
+        .modal-header {
+            background-color: var(--pokeball-red);
+            border-bottom: 20px solid var(--pokeball-black);
+            font-family: 'Noto Sans TC', sans-serif;
+
+
+        }
+
+        .modal-pic {
+
+            display: flex;
+            justify-content: center;
+
+        }
+
+        .modal-pic img {
+
+            width: 60%;
+            margin: 0 auto;
+
+        }
+
+        .modal-header .pic {
+            width: 50px;
+            margin-right: 0px;
+        }
+
+        .modal-header .pic img {
+            width: 100%;
+        }
+
+        .modal-header .close {
+            border-color: var(--pokeball-grey);
+        }
+
+        .modal-footer {
+            background-color: var(--pokeball-red);
+            border-top: 20px solid var(--pokeball-black);
         }
     </style>
 </head>
 
 <body>
-    <div class="container-fluid">
-        <div class="jumbotron">寶可夢圖鑑</div>
-        <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4">
+
+    <div class="jumbotron mb-5">
+        <div class="pic p-5">
+            <img src="./img/pokemon-logo.png" alt="">
         </div>
+
     </div>
 
-    <template id="cardMonster">
 
-        <div class="col mb-5">
-            <div class="card" style="width: 18rem;">
-                <img src="" class="card-img-top" alt="..." class="w-100">
-                <div class="card-body">
-                    <h5 class="card-title"></h5>
-                    <p class="card-text"></p>
-                    <a href="#" class="btn btn-primary">詳細內容</a>
+    <div class="container">
+
+        <div class="row">
+        </div>
+
+        <div class="modal fade " id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog ">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel"></h5>
+                        <div class="pic"><img src="./img/pokeball.png" alt=""></div>
+
+
+                    </div>
+                    <div class="modal-body">
+                        <div class="modal-pic">
+                            <img class="monsterImage">
+                        </div>
+
+                        <h1 id="description" class="text-primary"></h1>
+                        <p class="defense"></p>
+                        <p class="hp"></p>
+                        <p class="attack"></p>
+                        <p class="special-attack"></p>
+                        <p class="special-defense"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>>
+    <template id="cardMonster">
+        <div class="col-3 mb-3">
+            <div class="card rounded-lg">
+                <img src="" class="card-img-top" alt="" class="w-100">
+                <div class="card-body ">
+
+
+                    <a href="#" class="btn btn-primary">Check Out</a>
+
+                    <p class="card-text pb-3 pt-2 p-3"></p>
                 </div>
             </div>
         </div>
     </template>
-
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel"></h5>
-
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <img class="monsterImage" >
-                    <h1 id="description" class="text-primary"></h1>
-                    <p class="defense"></p>
-                    <p class="hp"></p>
-                    <p class="attack"></p>
-                    <p class="special-attack"></p>
-                    <p class="special-defense"></p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-
-                </div>
-            </div>
-        </div>
-    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous">
     </script>
