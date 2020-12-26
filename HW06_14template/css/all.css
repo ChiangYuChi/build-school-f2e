@@ -51,6 +51,72 @@ table {
   border-spacing: 0;
 }
 
+.container {
+  max-width: 1200px;
+}
+
+[class*="col-"] {
+  padding: 15px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.col-1 {
+  width: 8.333333%;
+}
+
+.col-2 {
+  width: 16.666666%;
+}
+
+.col-3 {
+  width: 25%;
+}
+
+.col-4 {
+  width: 33.333333%;
+}
+
+.col-5 {
+  width: 41.666666%;
+}
+
+.col-6 {
+  width: 50%;
+}
+
+.col-7 {
+  width: 58.333333%;
+}
+
+.col-8 {
+  width: 66.666666%;
+}
+
+.col-9 {
+  width: 75%;
+}
+
+.col-10 {
+  width: 83.333333%;
+}
+
+.col-11 {
+  width: 91.666666%;
+}
+
+.col-12 {
+  width: 100%;
+}
+
 /*===
 card one
 ===*/
@@ -429,6 +495,90 @@ card four
 .card-four-container .item .txt a:nth-of-type(1):hover {
   background-color: #5928dc;
   color: white;
+}
+
+/*===
+card five
+===*/
+.card-five-container {
+  background-color: #2c3238;
+  height: 100vh;
+  font-family: "Lato", sans-serif;
+  position: relative;
+}
+
+.card-five-container .wrap {
+  width: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 auto;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: white;
+}
+
+.card-five-container .wrap h3 {
+  font-size: 14px;
+  letter-spacing: 2.8px;
+  padding-bottom: 15px;
+  font-weight: 700;
+}
+
+.card-five-container .wrap .about {
+  padding-top: 18px;
+}
+
+.card-five-container .wrap .about .txt {
+  font-size: 16px;
+  line-height: 26px;
+}
+
+.card-five-container .wrap .tag {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding-top: 18px;
+}
+
+.card-five-container .wrap .tag .box {
+  font-size: 14px;
+  line-height: 26px;
+  padding: 5px;
+  margin: 2px 4px 2px 0;
+  background-color: #252b30;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.card-five-container .wrap .comment {
+  padding-top: 18px;
+}
+
+.card-five-container .wrap .comment .txt {
+  padding-bottom: 10px;
+}
+
+.card-five-container .wrap .comment .txt h4 {
+  font-size: 18px;
+  font-weight: 700;
+  padding-bottom: 8px;
+}
+
+.card-five-container .wrap .comment .txt h4:hover {
+  color: #5928dc;
+}
+
+.card-five-container .wrap .comment .txt span {
+  font-size: 12px;
 }
 
 /*===

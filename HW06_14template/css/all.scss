@@ -8,10 +8,75 @@ $color_tiffanyBlue:rgb(76, 230, 254);
 $color_skyBlue:rgba(26, 129, 253, 1);
 $color_cardBg:rgba(89, 40, 220, 1);
 $color_brown:rgb(195, 182, 149);
+$color_tagGray:rgba(37, 43, 48, 1);
 $font-Montserrat:'Montserrat',
 sans-serif;
 $font-Lato:'Lato',
 sans-serif;
+//grid
+
+.container {
+    max-width: 1200px;
+}
+
+[class*="col-"] {
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col-1 {
+    width: 8.333333%;
+}
+
+.col-2 {
+    width: 16.666666%;
+}
+
+.col-3 {
+    width: 25%;
+}
+
+.col-4 {
+    width: 33.333333%;
+}
+
+.col-5 {
+    width: 41.666666%;
+}
+
+.col-6 {
+    width: 50%;
+}
+
+.col-7 {
+    width: 58.333333%;
+}
+
+.col-8 {
+    width: 66.666666%;
+}
+
+.col-9 {
+    width: 75%;
+}
+
+.col-10 {
+    width: 83.333333%;
+}
+
+.col-11 {
+    width: 91.666666%;
+}
+
+.col-12 {
+    width: 100%;
+}
+
 
 /*===
 card one
@@ -283,7 +348,7 @@ card four
         clip-path: ellipse(65% 105% at 46% -18%);
         -webkit-clip-path: ellipse(65% 105% at 56% -18%);
         height: 595px;
-       
+
         background: white;
 
 
@@ -304,7 +369,7 @@ card four
 
         .pic {
             width: 65%;
-         
+
 
             img {
                 width: 100%;
@@ -315,7 +380,7 @@ card four
 
         .txt {
             width: 35%;
-           
+
             padding: 50px 30px 50px 50px;
 
             h1 {
@@ -342,31 +407,123 @@ card four
                 line-height: 30px;
                 padding-bottom: 30px;
             }
-            a{
-              
-               padding: 15px 40px;
-              
-               border: 1px solid $color_cardBg;
-               border-radius: 5px;
-               text-decoration: none;
-               color: white;
-               background-color: $color_cardBg;
-               &:hover{
-                background-color:white;
-                color: $color_cardBg;
-               }
-               &:nth-of-type(1){
-                   margin-right: 30px;
-                   background-color:white;
-                   color: $color_cardBg;
-                   &:hover{
-                    background-color: $color_cardBg;
-                    color: white;
-                   }
-               }
+
+            a {
+
+                padding: 15px 40px;
+
+                border: 1px solid $color_cardBg;
+                border-radius: 5px;
+                text-decoration: none;
+                color: white;
+                background-color: $color_cardBg;
+
+                &:hover {
+                    background-color: white;
+                    color: $color_cardBg;
+                }
+
+                &:nth-of-type(1) {
+                    margin-right: 30px;
+                    background-color: white;
+                    color: $color_cardBg;
+
+                    &:hover {
+                        background-color: $color_cardBg;
+                        color: white;
+                    }
+                }
             }
         }
     }
+}
+
+/*===
+card five
+===*/
+.card-five-container {
+    background-color: $color_darkGray;
+    height: 100vh;
+    font-family: $font-Lato;
+    position: relative;
+
+    .wrap {
+        width: 70%;
+       
+        display: flex;
+        justify-content: center;
+
+        margin: 0 auto;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+
+
+        h3 {
+            font-size: 14px;
+            letter-spacing: 2.8px;
+            padding-bottom: 15px;
+          
+            font-weight: 700;
+        }
+
+        .about {
+            padding-top: 18px;
+        .txt{
+            font-size:16px;
+            line-height: 26px;
+           
+          
+        }
+        }
+
+        .tag {
+
+            display: flex;
+            flex-wrap: wrap;
+padding-top: 18px;
+
+            .box {
+                font-size: 14px;
+                line-height: 26px;
+                padding: 5px;
+                margin: 2px 4px 2px 0;
+                background-color: $color_tagGray;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+
+
+            }
+
+        }
+        .comment{
+            padding-top: 18px;
+            .txt{
+                padding-bottom: 10px;
+                h4{
+                    font-size: 18px;
+                    font-weight: 700;
+                    padding-bottom: 8px;
+                    &:hover{
+                        color: $color_cardBg;
+                    }
+                }
+                span{
+                    font-size: 12px;
+                  
+                }
+            }
+            
+        }
+
+
+
+    }
+
+
+
 }
 
 /*===
