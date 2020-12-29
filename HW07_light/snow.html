@@ -119,6 +119,19 @@
             }
         }
 
+        @keyframes ok{
+            0%{
+                transform: rotate(4deg);
+             
+            }
+            
+            
+            100%{
+                transform: rotate(-4deg);
+                
+                /* opacity: 0; */
+            }
+        }
         .snowflake {
             position: fixed;
             top: -10%;
@@ -201,6 +214,30 @@
             text-align: center;
             color: white;
         }
+
+        .pic{
+            width: 300px;
+            margin:0  auto;
+            
+            animation-name: ok;
+            animation-duration: 1s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            animation-direction: alternate-reverse;
+        }
+        .pic img{
+            width: 100%;
+            -moz-transform:scaleX(-1);
+            -webkit-transform:scaleX(-1);
+            -o-transform:scaleX(-1);
+            transform:scaleX(-1);
+            /*兼容IE*/
+            filter:FlipH;
+            
+        }
+
+
+
     </style>
 </head>
 
@@ -254,15 +291,14 @@
         <li class="christmas-light"></li>
         <li class="christmas-light"></li>
         <li class="christmas-light"></li>
-        <li class="christmas-light"></li>
-        <li class="christmas-light"></li>
-        <li class="christmas-light"></li>
-        <li class="christmas-light"></li>
-        <li class="christmas-light"></li>
-        <li class="christmas-light"></li>
+        
+        
     </ul>
 
     <h1>Merry Christmas</h1>
+    <div class="pic">
+        <img src="./img/santa.png" alt="">
+    </div>
 </body>
 
 </html>
