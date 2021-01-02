@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.79.0">
+  <title>Dashboard Template · Bootstrap v5.0</title>
+
+  <!-- <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/dashboard/"> -->
+
+
+
+  <!-- Bootstrap core CSS -->
+  <link href="./assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+
+    .input-group-addon {
+      padding: 6px 12px;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1;
+      color: #555;
+      text-align: center;
+      background-color: #eee;
+      border: 1px solid #ccc;
+
+    }
+
+    .input-group-addon:first-child {
+      border-right: 0;
+    }
+
+
+    .btn {
+      color: #333;
+      background-color: #fff;
+      border-color: #ccc;
+      border-left: 0;
+      border-radius: initial;
+      background-color: #eee;
+    }
+
+    .btn-group-justified {
+      display: table;
+      width: 100%;
+      table-layout: fixed;
+      border-collapse: separate
+    }
+  </style>
+
+
+  <!-- Custom styles for this template -->
+  <link href="./assets/dist/css/dashboard.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">1A2B</a>
+    <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse"
+      data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+    <ul class="navbar-nav px-3">
+      <li class="nav-item text-nowrap">
+        <a class="nav-link" href="#">Sign out</a>
+      </li>
+    </ul>
+  </header>
+
+  <div class="container-fluid">
+    <div class="row">
+      <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+        <div class="position-sticky pt-3">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">
+                <span data-feather="home"></span>
+                Dashboard
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <span data-feather="file"></span>
+                Orders
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <span data-feather="shopping-cart"></span>
+                Products
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <span data-feather="users"></span>
+                Customers
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <span data-feather="bar-chart-2"></span>
+                Reports
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <span data-feather="layers"></span>
+                Integrations
+              </a>
+            </li>
+          </ul>
+
+          <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+            <span>Saved reports</span>
+            <a class="link-secondary" href="#" aria-label="Add a new report">
+              <span data-feather="plus-circle"></span>
+            </a>
+          </h6>
+          <ul class="nav flex-column mb-2">
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <span data-feather="file-text"></span>
+                Current month
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <span data-feather="file-text"></span>
+                Last quarter
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <span data-feather="file-text"></span>
+                Social engagement
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <span data-feather="file-text"></span>
+                Year-end sale
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        <div
+          class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+          <div class="btn-group btn-group-justified d-flex ">
+            <div class="col-4 p-0 m-0"> <a id="start" type="button" class="btn  w-100">開始</a></div>
+            <div class="col-4 p-0 m-0"> <a id="restart" type="button" class="btn btn-default w-100"
+                disabled="true">放棄重來</a></div>
+            <div class="col-4 p-0 m-0"> <a id="cheat" type="button" class="btn btn-default w-100"
+                disabled="true">看答案</a></div>
+          </div>
+        </div>
+
+        <ul id="guessResults" class="list-group">
+          <li class="list-group-item">
+            <span class="label bg-danger">0A1B</span>
+            <!--<span class="badge">0A1B</span>-->
+            1234
+          </li>
+          <li class="list-group-item">
+            <span class="label bg-danger">0A3B</span>
+            <!--<span class="badge">0A3B</span>-->
+            3456
+          </li>
+          <li class="list-group-item">
+            <span class="label bg-danger">0A2B</span>
+            <!--<span class="badge">0A2B</span>-->
+            4567
+          </li>
+          <li class="list-group-item">
+            <span class="label bg-danger">2A0B</span>
+            <!--<span class="badge">2A0B</span>-->
+            6089
+          </li>
+          <li class="list-group-item">
+            <span class="label bg-danger">3A0B</span>
+            <!--<span class="badge">3A0B</span>-->
+            6345
+          </li>
+          <li class="list-group-item">
+            <span class="label bg-success">4A0B</span>
+            <!--<span class="badge badge-success">4A0B</span>-->
+            6385
+          </li>
+        </ul>
+
+        <div class="input-group">
+          <span class="input-group-addon" id="sizing-addon1">猜答案</span>
+          <input id="userGuess" type="text" name="" class="form-control" value="" required="required"
+            placeholder="請輸入猜測數字" disabled="true">
+          <span class="input-group-btn">
+            <a id="guess" type="button" class="btn" disabled="true">猜!</a>
+          </span>
+        </div>
+      </main>
+    </div>
+  </div>
+
+
+  <!-- <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js"
+    integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous">
+
+  </script> -->
+  <script>
+    //產生四位數不重複亂數
+    let startGame = document.querySelector("#start");
+    let guessInput = document.querySelector("#userGuess");
+    let resetGame = document.querySelector("#restart");
+    let showAnswer = document.querySelector('#cheat');
+    let userAction = document.querySelector("#guess");
+    let guessResult = document.getElementById("guessResults");
+    let answer = new Array(4);
+
+    // let randomAry = []
+
+
+    //開始遊戲
+
+    startGame.addEventListener("click", function () {
+      guessInput.removeAttribute("disabled");
+      resetGame.removeAttribute("disabled");
+      showAnswer.removeAttribute("disabled");
+      guessResult.innerHTML = null;
+      userAction.removeAttribute("disabled");
+      answer = creatRandom();
+      console.log(answer)
+
+    });
+
+
+
+    resetGame.addEventListener('click', function () {
+
+      if (resetGame.hasAttribute("disabled")) {
+        alert("請先按開始");
+      } else {
+        guessResult.innerHTML = null;
+        answer = creatRandom();
+      }
+
+    });
+
+
+    showAnswer.addEventListener('click', function () {
+      if (showAnswer.hasAttribute("disabled")) {
+        alert("請先按開始");
+      } else {
+        alert(answer.join(""));
+      }
+    });
+
+
+    function creatRandom() {
+      let randomAry = new Array(4);
+      for (let i = 0; i < 4; i++) {
+        randomAry[i] = Math.floor(Math.random() * 9 + 1);
+        for (let j = 0; j < i; j++) {
+          while (randomAry[j] == randomAry[i]) {
+            j = 0;
+            randomAry[i] = Math.floor(Math.random() * 9 + 1);
+          }
+        }
+      }
+      return randomAry;
+    }
+
+
+
+    //猜答案
+
+
+    let ansAry = [];
+    userAction.addEventListener("click", function (e) {
+      if (userAction.hasAttribute("disabled")) {
+        alert("請先按開始")
+      } else {
+        checkGuessNumbers();
+      }
+
+    });
+
+    function checkGuessNumbers() {
+      let userGuess = guessInput.value;
+      let input = document.getElementById("userGuess");
+      if (userGuess.length !== 4) {
+        alert("請輸入四位數字");
+        input.value = '';
+        return;
+      } else if (userGuess.split("").map(item => parseInt(item)).includes(NaN)) {
+        alert("請輸入四位數字");
+        input.value = '';
+        return;
+      } else if (checkNumber(userGuess) == true) {
+        alert("請勿輸入重複數字");
+        input.value = "";
+      } else {
+        checkAB(userGuess, answer);
+      }
+    }
+
+    function checkNumber(userGuess) {
+      for (let i = 0; i < userGuess.length; i++) {
+        if (userGuess[0] == userGuess[1] || userGuess[0] == userGuess[2] ||
+          userGuess[0] == userGuess[3] || userGuess[1] == userGuess[2] ||
+          userGuess[1] == userGuess[3] || userGuess[2] == userGuess[3]
+        ) {
+
+          return true;
+        }
+      }
+    }
+
+    function checkAB(userGuess, answer) {
+      let countA = 0;
+      let countB = 0;
+      let UserGuess = []
+      for (let i = 0; i < userGuess.length; i++) {
+        UserGuess.push(parseInt(userGuess[i]));
+      }
+      UserGuess.forEach((num) => {
+        if (answer.includes(num)) {
+          if (answer.indexOf(num) == UserGuess.indexOf(num)) {
+            countA++;
+          } else {
+            countB++;
+          }
+        }
+      })
+
+      checkResult(countA, countB, UserGuess);
+    }
+
+
+function checkResult(countA, countB, UserGuess){
+  let newLi = document.createElement("li");
+  newLi.setAttribute("class","list-group-item");
+  let newSpan = document.createElement("span");
+  let inputSpan = document.createElement("span");
+  inputSpan.innerText = UserGuess.join('');
+  document.querySelector("#guessResults").appendChild(newLi);
+  if(countA==4){
+    newSpan.setAttribute("class","label bg-success");
+    newSpan.innerText="4A0B";
+    newLi.appendChild(newSpan);
+    alert("YOU WIN")
+  }else{
+    newSpan.setAttribute("class","label bg-danger");
+    newSpan.innerText = `${countA}A${countB}B`;
+    newLi.appendChild(newSpan);
+  }
+  newLi.appendChild(inputSpan);
+}
+
+    
+    
+  </script>
+</body>
+
+</html>
