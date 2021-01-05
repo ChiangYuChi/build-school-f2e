@@ -99,8 +99,8 @@
         <div class="content">
 
             <div id="content">
-                <p><span id="date">2018-10-17</span>出生，你的星座是<span id="constellationName"></span></p>
-                <p id="number">生命靈數:</p>
+                <p><span id="date"></span><span id="constellationName"></span></p>
+                <p id="number">你的生命靈數:</p>
                 <p id="opnion"></p>
             </div>
 
@@ -266,8 +266,8 @@
         btnSubmit.addEventListener('click', function () {
             sum = 0;
             calculate();
-            date.innerHTML = calculateBirthday.value;
-            constellationName.innerHTML = constellation.cn;
+            date.innerHTML = `${calculateBirthday.value}出生 `;
+            constellationName.innerHTML = `你是${constellation.cn}`;
             number.innerText = `生命靈數:${sum}`;
         })
 
