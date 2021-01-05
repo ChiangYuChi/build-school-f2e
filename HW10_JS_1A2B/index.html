@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
   <meta name="generator" content="Hugo 0.79.0">
-  <title>Dashboard Template · Bootstrap v5.0</title>
+  <title>1A2B</title>
 
   <!-- <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/dashboard/"> -->
 
@@ -366,12 +366,12 @@ function checkResult(countA, countB, UserGuess){
   inputSpan.innerText = UserGuess.join('');
   document.querySelector("#guessResults").appendChild(newLi);
   if(countA==4){
-    newSpan.setAttribute("class","label bg-success");
+    newSpan.setAttribute("class","bg bg-success");
     newSpan.innerText="4A0B";
     newLi.appendChild(newSpan);
     alert("YOU WIN")
   }else{
-    newSpan.setAttribute("class","label bg-danger");
+    newSpan.setAttribute("class","bg bg-danger");
     newSpan.innerText = `${countA}A${countB}B`;
     newLi.appendChild(newSpan);
   }
