@@ -1,0 +1,329 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo-AppleStore</title>
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+        integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <style>
+        /* body{
+            background-color: #eee;
+        } */
+        table {
+            margin: 10px 0 0;
+        }
+
+        thead .row {
+            text-align: center;
+            background-color: #333;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .row {
+            margin: 0;
+        }
+
+        button {
+            outline: none;
+            color: #ccc;
+            background-color: transparent;
+            border-style: none;
+        }
+
+        button:focus {
+            outline: none;
+        }
+
+        button:hover {
+            color: #777;
+        }
+
+        .logo {
+            font-size: 30px;
+            color: #ccc;
+            text-decoration: none;
+        }
+
+        .logo:hover {
+            color: #aaa;
+        }
+
+        h1 {
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .product_title th {
+            border-top: 1px solid #ccc;
+        }
+
+        img {
+            width: 100%;
+        }
+        #product_color,
+        #product_memory{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .btn_color:hover{
+            border: 1px solid #aaa !important;
+            box-shadow: 0 0 3px 3px #bbb !important;
+        }
+        @media screen and (min-width: 768px) {
+            .product_title th {
+                border-top: none;
+            }
+
+            .product_title th+th {
+                border-left: 2px solid #ccc;
+                border-radius: 2px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <table class="container">
+        <thead id="product_thead">
+            <tr class="row product_title">
+                <th class="col-12 col-md-3">
+                    <h1><a href="#" class="logo"><i class="fab fa-apple" alt="Apple"></i></a></h1>
+                </th>
+                <th class="col-12 col-md-3"><button id="btn_IPhone">IPhone</button></th>
+                <th class="col-12 col-md-3"><button id="btn_IPad">IPad</button></th>
+                <th class="col-12 col-md-3"><button id="btn_Mac">Mac</button></th>
+            </tr>
+            <tr class="row product_title" id="product_title_model">
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="row">
+                <td id="product_img" class="col-12 col-md-6">
+
+                </td>
+                    <td class="col-12 col-md-6">
+                        <div id="product_title"></div>
+                        <div id="product_color"></div>
+                        <div id="product_memory"></div>
+                    </td>
+            </tr>
+        </tbody>
+    </table>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="./"></script>
+    <script>
+
+        window.onload = getAppleJSON();
+        let appleJSON = [];     //JSON檔容器
+        let product_img = document.getElementById("product_img");
+        let product_title = document.getElementById("product_title")
+        let product_color = document.getElementById("product_color")
+        let product_memory = document.getElementById("product_memory")
+        let btn_IPhone = document.getElementById("btn_IPhone")
+        let btn_IPad = document.getElementById("btn_IPad")
+        let btn_Mac = document.getElementById("btn_Mac")
+        let model_check = "";    //產品類型
+        let model_set = "";      //產品型號
+        let JSONNum = 0;         //JSON檔產品類型位置
+
+
+        //讀取JSON檔
+        function getAppleJSON() {
+            let xhr = new XMLHttpRequest();
+            xhr.onload = function () {
+                appleJSON = JSON.parse(this.responseText);
+
+            }
+            xhr.open("GET", "https://raw.githubusercontent.com/g13579112000/JS_TA_HomeWork/master/AppleStore/AppleStore.json",true);
+            xhr.send();
+        }
+
+        // 利用迴圈製作btn_click事件
+        // for(let Num in appleJSON){
+        //     for(let Product in appleJSON[Num]){
+        //         var btn = document.getElementById(`btn_${Product}`)
+        //         btn.addEventListener("click",function(){
+        //             let Model = [];
+        //             for (let item in appleJSON[Num].Product){
+        //                 Model.push(item)
+        //             }
+        //             model_check = Product;
+        //             thead_Product_Selector(Model);
+        //         })
+        //     }
+        // }
+
+        btn_IPhone.addEventListener("click", function () {
+
+            let Model = []
+            for (let item in appleJSON[0].IPhone) {
+                Model.push(item);
+            }
+            model_check = "IPhone"
+            thead_Product_Selector(Model);
+        })
+        btn_IPad.addEventListener("click", function () {
+
+            let Model = []
+            for (let item in appleJSON[1].IPad) {
+                Model.push(item);
+            }
+            model_check = "IPad"
+            thead_Product_Selector(Model);
+        })
+        btn_Mac.addEventListener("click", function () {
+
+            let Model = []
+            for (let item in appleJSON[2].Mac) {
+                Model.push(item);
+            }
+            model_check = "Mac"
+            thead_Product_Selector(Model);
+        })
+
+        //產品類型選擇 => 產出產品型號列(產品型號觸發事件附加)
+        function thead_Product_Selector(item) {
+            let tr = document.getElementById("product_title_model");
+            let width = `${100 / item.length}%`
+            tr.innerHTML = "";
+            for (let i = 0; i < item.length; i++) {
+                let th = document.createElement("th");
+                let button = document.createElement("button")
+                th.setAttribute("width", width)
+                button.setAttribute("style", "padding:10px 0;font-size:12px;")
+                button.setAttribute("onclick", "thead_Product_Model_Selector(this.innerText)")
+                button.innerText = item[i];
+                th.appendChild(button);
+                tr.appendChild(th);
+            }
+            product_img.innerHTML="";
+            product_title.innerHTML="";
+            product_color.innerHTML="";
+            product_memory.innerHTML="";
+        }
+
+        //產品型號觸發事件 =>產出產品初始化圖(左欄50%),產品標題型號+產品顏色欄+產品容量與價錢(右欄50%)
+        function thead_Product_Model_Selector(item) {
+            model_set = item;
+            tbody_Img_Create(item);
+            tbody_Title_Create(item);
+            tbody_Color_Create(item);
+            tbody_Memory_Create(item);
+        }
+
+        //產出產品初始化圖
+        function tbody_Img_Create(item) {
+            let img = document.createElement("img")
+            img.src = `./${item}_Base.png`;
+            product_img.innerHTML = "";
+            product_img.appendChild(img);
+        }
+
+        //產出產品標題型號
+        function tbody_Title_Create(item) {
+            let h2 = document.createElement("h2")
+            h2.innerText = item;
+            h2.setAttribute("style", "text-align:center; padding: 20px 0; font-weight:bold;")
+            product_title.innerText = "";
+            product_title.appendChild(h2);
+        }
+
+        //產出產品顏色欄
+        function tbody_Color_Create(item) {
+            check_back();
+            product_color.innerHTML = "";
+            for (let color of appleJSON[JSONNum][model_check][item].Color) {
+                let div = document.createElement("div");
+                let color_btn = document.createElement("button");
+                div.setAttribute("style", `height: 80px;
+                width: calc(33% - 20px);
+                 display : flex;
+                 flex-direction: column;
+                 justify-content: center;
+                 align-items: center;
+                 margin: 10px;
+                 color: #555;
+                 font-size: 14px;
+                 font-weight: bold;
+                 border:1px solid #ccc;
+                 border-radius:5px;
+                 box-shadow:0 0 3px 3px #ddd;
+                 box-sizing:border-box;
+                 `)
+                 div.setAttribute("id",`${color}`);
+                 div.setAttribute("class","btn_color");
+                color_btn.setAttribute("style", `width:30px;
+                 height:30px;
+                 background-color: ${color};
+                 border-radius: 50%;
+                 box-shadow: 0 0 3px 3px #eee;
+                 `)
+                div.setAttribute("onclick","color_Selector(this.id)")
+                div.appendChild(color_btn);
+                div.append(color);
+                product_color.appendChild(div);
+            }
+        }
+
+        //產出產品容量與價錢
+        function tbody_Memory_Create(item) {
+            product_memory.innerHTML = "";
+            for (let memory in appleJSON[JSONNum][model_check][item]["Memory"]) {
+                let price = appleJSON[JSONNum][model_check][item]["Memory"][memory];
+                let div = document.createElement("div");
+                let div_memory = document.createElement("h4");
+                let div_price = document.createElement("p");
+                let box = document.createElement("div")
+                box.setAttribute("style","text-align:center;padding:10px;box-sizing: border-box;display: flex;flex-direction: column;justify-content: center;border:1px solid #ccc;border-radius:5px;box-shadow:0 0 3px 3px #ddd")
+                div_memory.setAttribute("style","margin:0; font-size:26px;font-weight:600;")
+                div_price.setAttribute("style","margin:0; font-size:10px;color:#888")
+                div.setAttribute("style","padding:10px;width:50%;")
+                div_memory.innerText = memory;
+                div_price.innerText = price;
+                box.appendChild(div_memory);
+                box.appendChild(div_price);
+                div.appendChild(box);
+                product_memory.appendChild(div);
+            }
+         }
+
+        //顏色欄選取更換產品圖
+        function color_Selector(item){
+            let img = document.createElement("img")
+            img.src = `./${model_set}_${item}.png`;
+            product_img.innerHTML = "";
+            product_img.appendChild(img);
+            console.log(item)
+        }
+
+        //JSON檔矩陣位置抓取
+        function check_back() {
+            if (model_check == "IPhone") {
+                JSONNum = 0;
+            }
+            else if (model_check == "IPad") {
+                JSONNum = 1;
+            }
+            else if (model_check == "Mac") {
+                JSONNum = 2;
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>

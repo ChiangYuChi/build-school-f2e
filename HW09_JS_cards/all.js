@@ -52,7 +52,7 @@ function genCard(pokemonArrayNew) {
    
     pokemonArrayNew.forEach(item => {
         let card = document.querySelector('#cardMonster');
-        let cloneContent = card.content.cloneNode(true);1
+        let cloneContent = card.content.cloneNode(true);
       
         cloneContent.querySelector("img").src =
             `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${item.Id}.png`;
