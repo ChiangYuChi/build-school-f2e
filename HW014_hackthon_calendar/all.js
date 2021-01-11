@@ -8,13 +8,10 @@ let days = ['Sunday', 'Monday', 'Tuesday', 'Wedensday', 'Thursday', 'Friday', 'S
 let monthAndYear = $g('#monthAndYear');
 let prev = $g('.prev');
 let next = $g('.next');
-let notes;
-
 
 showCalendar(currentMonth,currentYear);
 
 function showCalendar(month, year) {
-
 let firstDay = new Date(year, month).getDay();
 let daysInMonth = 32 - new Date(year, month, 32).getDate();
 let tbl = $g('#calendar-body');
@@ -34,7 +31,6 @@ for (let i = 0; i < 6; i++) {
          break;
      }else{
          let cell = $c('td');
-   
          let cellText = $ctn(date);
          cell.classList.add('showEvent')
          if(date==today.getDate()&&year==today.getFullYear()&&month==today.getMonth()){
@@ -66,35 +62,53 @@ newTxt.innerHTML=`${event.eventText}`;
 div.appendChild(newTxt);
 let btn = $c('button');
 btn.setAttribute('class','close remove-event primary');
-btn.setAttribute('data-event-id',`${event.id}`);
+btn.setAttribute('data-eventId',`${event.id}`);
 btn.setAttribute('data-dismiss','alert');
 btn.setAttribute('aria-label',"Close");
-let span = $c('span');
-let spanText =$ctn('x');
-span.appendChild(spanText);
-btn.appendChild(span);
 
+let btnText =$ctn('x');
+
+btn.appendChild(btnText);
 div.appendChild(btn);
 $g('.events-today').appendChild(div);
+
 })                
 }
 
 
 function removeEvent(id){
+console.log(id);
 let storedEvents = JSON.parse(localStorage.getItem('events'));
+console.log(storedEvents);
 if(storedEvents!=null){
  storedEvents=storedEvents.filter(ev=>ev.id!=id);
  localStorage.setItem('events',JSON.stringify(storedEvents));
 }
 }
 
-$g('.remove-event').forEach(function(removeEvt){
-removeEvt.addEventListener('click',function(){
- let eventId = this.dataset.data-event-id;
- removeEvent(eventId);
-})
+
+
+
+$g('.events-today').addEventListener("click",function(e){
+if(e.target.innerHTML=='x'){
+  let eventId = e.target.dataset.eventid;
+  removeEvent(eventId);
+}
+
 })
 
+
+window.onload = function(
+){
+    $g('.remove-event').forEach(function(remove){
+        remove.addEventListener('click',function(e){
+        console.log(e.target);
+         let eventId = e.target.dataset.eventid;
+         console.log(eventId);
+         removeEvent(eventId);
+        })
+        })
+}
 
 prev.addEventListener('click',function(){
 currentYear = (currentMonth===0)?currentYear-1:currentYear;
@@ -110,8 +124,10 @@ showCalendar(currentMonth,currentYear);
 });
 
 $g('.showEvent').forEach(
+
 function(item){
  item.addEventListener('click',function(){
+
    $g("#event").classList.remove("d-none");
    let todaysDate = this.innerHTML+' '+months[currentMonth]+ " "+currentYear;
    let eventDay=days[new Date(currentYear,currentMonth,this.innerHTML).getDay()];
@@ -124,6 +140,7 @@ function(item){
 }
 )
 $g('.hide').addEventListener('click',function(){
+    
 $g("#event").classList.add("d-none");
 })
 $g('#createEvent').addEventListener('click',function(){
@@ -136,35 +153,33 @@ if (events) {
          obj = JSON.parse(events);
      }
 
-
-
 let eventDate = $g('.event-date').dataset.eventdate;
 let eventText = $g('#eventTxt').value;
-let valid = true;
+let valid = false;
 
 
-// if(eventText==" "){
-//     let span = $c('span');
-//     let textNode = $ctn('Please enter event')
-//     span.appendChild(textNode);
-//     span.classList.add('error');
-//     $g('.events-input').append(span);
-//     $g('#eventTxt').classList.add('data-invalid');
-// }else if(eventText.length<3){
-//     $g('#eventTxt').classList.add('data-invalid');
-//     let span = $c('span');
-//     let textNode = $ctn('please enter at least three characters')
-//     span.appendChild(textNode);
-//     span.classList.add('error');
-// }else{
-//     valid = true;
+if(eventText==" "){
+    let span = $c('span');
+    let textNode = $ctn('Please enter event')
+    span.appendChild(textNode);
+    span.classList.add('error');
+    $g('.events-input').append(span);
+    $g('#eventTxt').classList.add('data-invalid');
+}else if(eventText.length<3){
+    $g('#eventTxt').classList.add('data-invalid');
+    let span = $c('span');
+    let textNode = $ctn('please enter at least three characters')
+    span.appendChild(textNode);
+    span.classList.add('error');
+}else{
+    valid = true;
 
-// }
+}
 
 if(valid){
 let id = 1;
 if(obj.length>0){
- id = $g('.event-date').dataset.eventdate;
+ id = Math.max.apply('', obj.map(function (entry) { return parseFloat(entry.id); })) + 1;
 }else{
  id=1;
 }
@@ -175,6 +190,6 @@ obj.push({
 });
 localStorage.setItem("events",JSON.stringify(obj));
 showEvent(eventDate);
-console.log(eventDate);
+
 }
 });
