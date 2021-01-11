@@ -1,15 +1,135 @@
-td:hover {
+body {
+    background: #dc304b;
+    font-family: 'Roboto';
+  }
+
+  .page-title h3 {
+    font-size: 48px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: -1px -1px 1px#460000, 2px 2px 1px #ff4965;
+    color: #bd122d;
+  }
+
+  .card {
+    border-radius: 15px;
+    overflow: hidden;
+  }
+
+  .card-header {
+    background: #5c3037;
+    color: white;
+    position:relative;
+  }
+
+  .card-header .prev,
+  .card-header .next {
     cursor: pointer;
+  }
+
+  .card-header button{
+   right: 30px;
+   position: absolute;
+   border: none;
+background:transparent;
+font-size: 20px;
+  }
+
+  .card-body {
+    background: #f1acb7;
+    cursor: pointer;
+
+  }
+
+  .card-body .days span {
+  background:#e27586;
+  color:#fff;
+  border-radius: 50%;;
+  display: inline-block;
+  height: 45px;
+  width: 45px;
+  line-height: 45px;
+  cursor: pointer
+  }
+
+  .card-body .days span:hover{
+    background: #f7899a
+  }
+
+ .card-body .dates span{
+  background:#f4bdc6; 
+  color: #000;
+  border-radius: 50%;
+  display: inline-block;
+  height: 45px;
+  width: 45px;
+  line-height: 45px;
+  cursor: pointer
+ }
+
+ .card-body .dates span.active,
+.card-body .dates span:hover {
+  background: #ffeef0;
+  color: #000
+}
+
+html body .card#event .card-body .events-today {
+  height: 210px;
+  overflow-x: hidden
 }
 
 html body .card#event .card-body .events-input .data-invalid {
-    border-color: red
+  border-color: red
 }
 
+
 html body .card#event .card-body .events-input .error {
-    font-size: 12px;
-    color: red;
-    position: absolute;
-    top: 100%
+  font-size: 12px;
+  color: red;
+  position: absolute;
+  top: 100%
 }
- 
+
+.card-body .alert{
+display:flex;
+justify-content: space-between;
+
+}
+
+.alert button{
+border: none;
+background:rgb(248,215,218);
+font-size: 20px;
+}
+
+.alert button:focus{
+outline: none;
+}
+.alert button:hover{
+color:white;
+}
+
+
+@media(max-width: 767px) {
+  html body .pa-sm {
+      position: absolute
+  }
+
+  html body .card-body .days span {
+      height: 38px;
+      width: 38px;
+      line-height: 38px;
+      font-size: .8rem
+  }
+
+  html body .card-body .dates span {
+      height: 38px;
+      width: 38px;
+      line-height: 38px;
+      font-size: .8rem
+  }
+
+  html body .card#event .card-body .events-today {
+      height: 188px
+  }
+}

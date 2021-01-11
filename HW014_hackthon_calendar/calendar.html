@@ -1,68 +1,84 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calendar</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./all.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <title>JavaScript Event Calendar</title>
+ <link rel="stylesheet" href="./all.css">
+
 </head>
 
 <body>
-    <div class="container col-sm-4 col-md-6 col-lg-6 mt-5 ">
-        <h1>Calendar</h1>
-        <div class="card">
-            <h3 class="card-header" id="monthAndYear">Month And Year</h3>
-            <table class="table table-bordered table-responsive-md" id="calendar">
-                <thead>
-                    <tr></tr>
-                    <th col-sm-2>Sun</th>
-                    <th col-sm-2>Mon</th>
-                    <th col-sm-2>Tue</th>
-                    <th col-sm-2>Wed</th>
-                    <th col-sm-2>Thu</th>
-                    <th col-sm-2>Fri</th>
-                    <th col-sm-2>Sat</th>
-                    </tr>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-10 mx-auto text-center mt-5 page-title">
+        <h3>
+          JavaScript Event Calendar
+        </h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 col-12 d-flex">
+        <div class="card border-0 mt-5 flex-fill">
+          <div class="card-header py-3 d-flex justify-content-between" id="calendar">
+            <span class="prevMonth prev">&#10096;</span>
+            <span><strong id="monthAndYear">Month And Year</strong></span>
+            <span class="nextMonth next">&#10097;</span>
+          </div>
+          <div class="card-body px-1 py-3">
+            <div class="table-responsive">
+              <table class="table table-sm table-borderless">
+                <thead class="days text-center">
+                  <tr>
+                    <th><span>Sun</span></th>
+                    <th><span>Mon</span> </th>
+                    <th><span>Tue</span> </th>
+                    <th> <span>Wed</span> </th>
+                    <th> <span>Thu</span> </th>
+                    <th><span>Fri</span></th>
+                    <th><span>Sat</span></th>
+                  </tr>
                 </thead>
-                <tbody id="calendar-body">
-
+                <tbody class="dates text-center" id="calendar-body">
                 </tbody>
-            </table>
-            <div class="form-inline">
-                <button class="btn btn-outline-primary col-sm-6 prev">Previous</button>
-                <button class="btn btn-outline-primary col-sm-6 next">Next</button>
+              </table>
             </div>
+          </div>
         </div>
-        <div class="col-sm-6  d-flex ">
-            <div class="card border-0 mt-5 flex-fill d-none" id="event">
-                <div class="card-header py-3 text-center">
-                   新增記事
-                    <button type="button" class="close hide">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="card-body px-1 py-3">
-                    <div class="text-center">
-                        <span class="event-date">06 June 2020</span><br>
-                        <span class="event-day">Monday</span>
-                    </div>
-                    <div class="events-today my-3 px-3">
-                    </div>
-                    <div class="input-group events-input mb-3 col-10 mx-auto mt-2">
-                        <input type="text" class="form-control" placeholder="新增記事" id="eventTxt">
-                        <div class="input-group-append">
-                            <button class="btn btn-danger" type="button" id="createEvent">+</button>
-                        </div>
-                    </div>
-                </div>
+      </div>
+      <div class="col-sm-6 col-12 d-flex pa-sm">
+        <div class="card border-0 mt-5 flex-fill d-none" id="event">
+            <div class="card-header py-3 text-center">
+                <span mr-auto>Add Event</span> 
+                <button type="button" class="close hide">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
-        </div>
+            <div class="card-body px-1 py-3">
+                <div class="text-center">
+                    <span class="event-date">06 June 2020</span><br>
+                    <!-- <span class="event-day">Monday</span> -->
+                </div> 
+                <div class="events-today my-3 px-3">
+                   
+                </div> 
+                <div class="input-group events-input mb-3 col-10 mx-auto mt-2">
+                    <input type="text" class="form-control" placeholder="Add Event" id="eventTxt">
+                    <div class="input-group-append">
+                        <button class="btn btn-danger" type="button" id="createEvent">+</button>
+                    </div>
+                </div>                        
+            </div>
+        </div>                            
     </div>
     </div>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
@@ -71,10 +87,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
-    <script src="./all.js" type="module"></script>
-
-
-</script>
+<script src="./all.js" type="module"></script>
 </body>
 
 </html>
