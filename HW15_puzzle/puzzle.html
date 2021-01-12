@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>n-puzzle</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        body {
+            display: flex;
+            background-color: #114B5F;
+            text-align: center;
+            flex-direction: column;
+            padding-top: 2%;
+        }
+
+        #container {
+            width: 500px;
+            height: 500px;
+            background: #E4FDe1;
+            margin: 10px auto;
+        }
+
+        ul {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            background: #E4FDe1;
+        }
+
+        ul li {
+            background-color: #456990;
+            width: 30%;
+            height: 150px;
+            border: 1px solid #028090;
+            margin-top: 10px;
+            text-align: center;
+            font-size: 2rem;
+            padding-top: 3rem;
+        }
+
+        .empty {
+            background: #ffffff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="container">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li class="empty"></li>
+        </ul>
+    </div>
+    <script src="./js/all.js"></script>
+</body>
+
+</html>
