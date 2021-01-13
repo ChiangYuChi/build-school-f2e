@@ -111,7 +111,7 @@ $g('.showEvent').forEach(
             $g("#event").classList.remove("d-none");
             let todaysDate = this.innerHTML + ' ' + months[currentMonth] + " " + currentYear;
             let eventDay = days[new Date(currentYear, currentMonth, this.innerHTML).getDay()];
-            console.log(eventDay);
+           
             let eventDate = this.innerHTML + currentMonth + currentYear
             $g('.event-date').innerHTML = todaysDate;
             $g('.event-date').setAttribute('data-eventdate', `${eventDate}`);
@@ -137,6 +137,7 @@ $g('#createEvent').addEventListener('click', function () {
     let eventText = $g('#eventTxt').value;
     let valid = false;
     let errorMsg = $g('.error-msg');
+  
     errorMsg.classList.add('error');
     if (eventText == "") {
         errorMsg.innerText = '請輸入記事';

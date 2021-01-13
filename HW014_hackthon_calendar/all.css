@@ -90,6 +90,12 @@ html body .card#event .card-body .events-input .error {
   top: 100%
 }
 
+.card-body .events-input .error-msg{
+text-align:left;
+padding: 10px;
+font-size: 22px;
+}
+
 .card-body .alert{
 display:flex;
 justify-content: space-between;
