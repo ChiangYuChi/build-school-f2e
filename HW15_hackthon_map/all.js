@@ -9,7 +9,7 @@ let jsonArray = [];
 let jsonArrayNew = [];
 let city = $g("#city");
 let district = $g("#district");
-let msg = $g("#msg");
+
 let loadingRing = $g('.loading-ring');
 let map;
 let regionMarker = [];
@@ -25,6 +25,9 @@ window.onload = function () {
             jsonArray = JSON.parse(result);
             TrasformArray(jsonArray);
 
+        })
+        .then(()=>{
+            loadingRing.style.display='none';
         });
 
 }

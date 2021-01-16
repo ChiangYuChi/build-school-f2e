@@ -345,6 +345,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: relative;
 }
 
 body .sidebar {
@@ -376,6 +377,7 @@ body .main {
 
 body .main #map {
   height: 100vh;
+  z-index: 1;
 }
 
 body .loading-ring {
@@ -385,8 +387,12 @@ body .loading-ring {
   border-left-color: #7983ff;
   border-radius: 50%;
   display: inline-block;
-  -webkit-animation: donut-spin 3s linear infinite;
-          animation: donut-spin 3s linear infinite;
+  -webkit-animation: donut-spin 1s linear infinite;
+          animation: donut-spin 1s linear infinite;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 9;
 }
 
 @-webkit-keyframes donut-spin {
