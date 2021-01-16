@@ -1,11 +1,26 @@
-[{
-    "iPhone":{
-
-    },
-    "iPad":{
-
-    },
-    "Mac":{
-        
-    }
-}]
+{
+    "iPadPro":[
+        { "size":"11", "storage":"64G", "network":"Wi-Fi", "Color":"Blue" },
+        { "size":"11", "storage":"256G", "network":"Wi-Fi", "Color":"Gold" },
+        { "size":"12.9", "storage":"256G", "network":"Cellular", "Color":"Black" },
+        { "size":"default", "storage":"256G", "network":"Cellular", "Color":"Black" }
+    ],
+    "iPadAir":[
+        { "size":"11", "storage":"64G", "network":"Wi-Fi", "Color":"Blue" },
+        { "size":"11", "storage":"256G", "network":"Wi-Fi", "Color":"Gold" },
+        { "size":"12.9", "storage":"256G", "network":"Cellular", "Color":"Black" },
+        { "size":"default", "storage":"256G", "network":"Cellular", "Color":"Black" }
+    ],
+    "iPad":[
+        { "size":"11", "storage":"64G", "network":"Wi-Fi", "Color":"Blue" },
+        { "size":"11", "storage":"256G", "network":"Wi-Fi", "Color":"Gold" },
+        { "size":"12.9", "storage":"256G", "network":"Cellular", "Color":"Black" },
+        { "size":"default", "storage":"256G", "network":"Cellular", "Color":"Black" }
+    ],
+    "iPadmini":[
+        { "size":"11", "storage":"64G", "network":"Wi-Fi", "Color":"Blue" },
+        { "size":"11", "storage":"256G", "network":"Wi-Fi", "Color":"Gold" },
+        { "size":"12.9", "storage":"256G", "network":"Cellular", "Color":"Black" },
+        { "size":"default", "storage":"256G", "network":"Cellular", "Color":"Black" }
+    ]
+}

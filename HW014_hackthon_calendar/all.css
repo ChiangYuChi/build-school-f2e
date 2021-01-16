@@ -35,8 +35,11 @@ background:transparent;
 font-size: 20px;
   }
 
-  .card-body {
+  .card-body{
     background: #f1acb7;
+  }
+  .calendar-body {
+   
     cursor: pointer;
 
   }

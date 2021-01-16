@@ -1,72 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Simple Map</title>
-    <!-- <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script> -->
-    <!-- <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDW8fPLkwpjw1Vurz_TL5XeLRttz8JEIBY&callback=initMap&libraries=&v=weekly"
-        defer></script>
-    <style type="text/css">
-        /* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
-        #map {
-            height: 100%;
-        }
 
-        /* Optional: Makes the sample page fill the window. */
-        html,
-        body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
-    </style>
-    <script>
-        let map;
-        function initMap() {
-            const myLatLng = {
-                lat: 25.0415956,
-                lng: 121.5362985
-            };
-            map = new google.maps.Map(document.getElementById("map"), {
-                center: myLatLng,
-                zoom: 15,
-            });
-            new google.maps.Marker({
-                position: myLatLng,
-                map,
-                title: "Hello World!",
-            });
-        }
-    </script> -->
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
-    <!-- 
-        https://data.gov.tw/dataset/7777
-        觀光資訊標準格式( https://gis.taiwan.net.tw/Data/觀光資訊標準格式.pdf)
-     -->
-    <!-- <div id="map"></div> -->
-   <section></section>
-   <section>
-     
-   </section>
-   <script
-   src="https://code.jquery.com/jquery-3.5.1.js"
-   integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-   crossorigin="anonymous"></script>
-   <script>
- function data(constellation, sum) {
-            $.ajax({
-                type: "GET",
-                url: `https://cors-proxy.htmldriven.com/?url=https://gis.taiwan.net.tw/XMLReleaseALL_public/scenic_spot_C_f.json`,
-                success: function (response) {
-                    console.log(response);
-                }
-            });
-        }
-   </script>
+    <!-- <div class="loading-ring"></div> -->
+    <section class="sidebar">
+        <h1>台灣旅遊景點查詢</h1>
+        <select name="" id="city">
+            <option value="-1">請選擇縣市</option>
+        </select>
+        <select name="" id="district">
+            <option value="-1">請選擇區域</option>
+        </select>
+        <select name="" id="site">
+            <option value="-1">請選擇景點</option>
+        </select>
+    </section>
+    <section class="main">
+        <div id="map"></div>
+    </section>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDW8fPLkwpjw1Vurz_TL5XeLRttz8JEIBY&=initMap&libraries=&v=weekly
+   "></script>
+   <script src="./all.js" type="module"></script>
+   
 </body>
 
 </html>
