@@ -365,6 +365,7 @@ body .sidebar h1 {
   text-align: center;
   color: white;
   font-family: 'Helvetica', sans-serif;
+  font-size: 28px;
 }
 
 body .sidebar select {
