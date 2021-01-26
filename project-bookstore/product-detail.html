@@ -14,20 +14,22 @@
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 
 
-        :root{
-        --crimson-color:#bf0000;;
+        :root {
+            --crimson-color: #bf0000;
+            ;
         }
 
-      
+
         .book-detail {
             font-family: 'Noto Sans TC', sans-serif;
         }
 
-        .breadcrumb{
+        .breadcrumb {
             margin-bottom: 30px;
             width: 100%;
-            
-        } 
+
+        }
+
         .breadcrumb a {
             padding-right: 5px;
             text-decoration: initial;
@@ -39,25 +41,42 @@
             padding-right: 5px;
         }
 
+        .breadcrumb-sm a:before {
+            content: '<';
+            color: black;
+            padding-right: 5px;
+            font-size: 10px;
+        }
+
+        .detail-sm-bg .pic {
+            background-image: url(./img/sm-book-bg.jpg);
+            background-size: cover;
+
+            height: 60px;
+            background-repeat: no-repeat;
+            position: relative;
+
+        }
+
         .detail-cover .pic {
             cursor: pointer;
             text-align: center;
             margin: 0 auto;
-       
+
         }
 
 
         .detail-cover .pic .pic-content {
             cursor: pointer;
             text-align: center;
-            position:relative;
-            border-top:1px solid rgb(87, 104, 155,.1);
-            border-left:1px solid rgb(87, 104, 155,.1);
-            border-right:1px solid rgb(87, 104, 155,.1);
+            position: relative;
+            border-top: 1px solid rgb(87, 104, 155, .1);
+            border-left: 1px solid rgb(87, 104, 155, .1);
+            border-right: 1px solid rgb(87, 104, 155, .1);
         }
 
         .detail-cover .pic:after {
-            
+
             content: '';
             display: block;
             background-image: url(./img/ia_100000000456.png);
@@ -88,30 +107,38 @@
             opacity: 1;
         }
 
-       .detail-preview{
-           border-bottom: 2px solid #eeeeee;
-           margin-bottom: 13px;
-           padding-bottom: 13px;
-       }
-       .detail-save{
-           padding-bottom: 20px
-       }
+        .content hr{
+            width: 100%;
+            
+        }
+        .detail-preview {
+            border-bottom: 2px solid #eeeeee;
+            
+        }
+
+        .detail-save {
+            padding-bottom: 20px
+        }
+
         .detail-preview .fa-search,
         .detail-save .fa-arrow-to-bottom {
             color: black;
             padding-right: 10px;
             font-size: 16px;
         }
+
         .detail-save .fa-arrow-to-bottom {
-          padding-right: 15px;
+            padding-right: 10px;
         }
+
         .detail-preview a,
         .detail-save a {
             text-decoration: none;
             font-size: 16px;
             color: var(--crimson-color)
         }
-        .total-rating .fas{
+
+        .total-rating .fas {
             color: var(--crimson-color)
         }
 
@@ -141,9 +168,7 @@
         .special-deal a {
             text-decoration: underline;
         }
-        .detail-product{
-            box-sizing: border-box;
-        }
+
 
         .detail-title h1 {
             font-size: 26px;
@@ -155,144 +180,165 @@
             color: #595959;
             font-weight: 300;
         }
-        .detail-title h3{
+
+        .detail-title h3 {
             font-size: 18px;
             font-weight: 300;
             color: var(--crimson-color);
         }
-        .detail-title h3 span{
-            color: black; 
+
+        .detail-title h3 span {
+            color: black;
             padding-right: 10px;
         }
+
         .detail-title h5 {
             font-size: 18px;
             font-weight: 300;
         }
-        .detail-title p{
+
+        .detail-title p {
             font-weight: 300;
             font-size: 15px;
         }
-        .detail-title .hype{
+
+        .detail-title .hype {
             font-weight: 400;
             line-height: 25px;
         }
-        .detail-pricing .box{
+
+        .detail-pricing .box {
             border: 1px solid #e6e6e6;
             box-shadow: 0 0 7px #e6e6e6;
             height: auto;
             padding: 20px 15px;
             box-sizing: border-box;
         }
-        .detail-pricing .pricing-title{
+
+        .detail-pricing .pricing-title {
             font-size: 18px;
             font-weight: 300;
         }
-        .detail-pricing button{
+
+        .detail-pricing button {
             width: 100%;
-            border:none;
+            border: none;
             margin-bottom: 10px;
-            padding:5px 0;
+            padding: 5px 0;
             font-size: 14px;
             color: white;
         }
 
-      
 
-        .detail-pricing .add-to-cart{
+
+        .detail-pricing .add-to-cart {
             background-color: var(--crimson-color);
             transition: all 1s;
         }
 
-        .detail-pricing .add-to-cart:hover{
+        .detail-pricing .add-to-cart:hover {
             background-color: white;
             border: 2px solid var(--crimson-color);
             color: black;
-            
+
         }
-        
+
         .detail-pricing .buy-now,
-        .detail-pricing .add-to-wishlist{
+        .detail-pricing .add-to-wishlist {
             background-color: #595959;
             transition: all 1s;
         }
 
 
         .detail-pricing .buy-now:hover,
-        .detail-pricing .add-to-wishlist:hover{
-            border:2px solid #595959;
+        .detail-pricing .add-to-wishlist:hover {
+            border: 2px solid #595959;
             background-color: white;
-            color:black;
+            color: black;
         }
 
-        .active-price{
-            display:flex;
+        .active-price {
+            display: flex;
             margin: 25px 0;
             justify-content: space-between;
         }
 
 
-        
-.footer {
-    background-color: #241E1E;
-    font-family: 'Montserrat', sans-serif;
- 
-    margin-top: 35px;
-}
-.footer-company h5,
-.footer-account h5,
-.footer-help h5 {
-    color: white;
-}
 
-.footer-company a,
-.footer-account a,
-.footer-help a {
-    color: rgb(125, 125, 126);
-    font-size: 14px;
-    text-decoration: none;
-}
+        .footer {
+            background-color: rgb(162, 118, 88);
+            font-family: 'Montserrat', sans-serif;
+            margin-top: 35px;
+        }
 
-.footer a:hover {
-    color: white;
-    transition: ease-in .5s;
+        .footer-company h5,
+        .footer-account h5,
+        .footer-help h5 {
+            color: black;
+            font-weight: bold;
+        }
 
-}
+        .footer-company a,
+        .footer-account a,
+        .footer-help a {
+            color: black;
+            font-size: 14px;
+            text-decoration: none;
+        }
 
-.footer .pic{
-    
-    text-align: center;
-} 
-.footer .pic img {
-    width: 50%;
-   
-  
-    right: -180%;
-}
+        .footer a:hover {
+            color: white;
+            transition: ease-in .5s;
 
-.footer-phone {
-    color: white;
-    border-top: 1px solid rgb(125, 125, 126);
-    margin-top: 15px;
-    padding: 15px 0;
-    font-size: 14px;
-    letter-spacing: 1px
-}
+        }
 
-.footer-phone p span {
-    margin-right: 10px;
-}
+        .footer .pic {
 
-.footer-phone .fas,
-.footer-phone .fab {
-    padding-right: 10px;
-    font-size: 20px;
-}
+            text-align: center;
+        }
 
-.footer-phone .fab:hover {
-    color: rgb(125, 125, 126);
-    cursor: pointer;
-    transition: ease-in .5s;
-}
+        .footer .pic img {
+            width: 50%;
+            right: -180%;
+        }
+
+        .footer-phone {
+            color: black;
+            border-top: 1px solid black;
+            margin-top: 15px;
+            padding: 15px 0;
+            font-size: 14px;
+            letter-spacing: 1px
+        }
+
+        .footer-phone p span {
+            margin-right: 10px;
+        }
+
+        .footer-phone .fas,
+        .footer-phone .fab {
+            padding-right: 10px;
+            font-size: 20px;
+        }
+
+        .footer-phone .fab:hover {
+            color: black;
+            cursor: pointer;
+            transition: ease-in .5s;
+        }
+
+        .detail-main {
+            position: relative;
+
+        }
+
+        .detail-sm-bg {
+            background-image: url(./img/sm-book-bg.jpg);
+            height: 100px;
+            position: absolute;
+
+        }
+      
     </style>
 </head>
 
@@ -301,29 +347,40 @@
     <section class="book-detail">
         <div class="container">
             <div class="row ">
-                <div class="col-sm-12 breadcrumb">
+                <div class="col-sm-12 breadcrumb d-none d-md-block">
                     <a href="#">首頁</a>
                     <a href="#">電子書</a>
                     <a href="#">企業與金融</a>
                     <a href="#">原子習慣</a>
                 </div>
-                <div class="detail-main">
+                <div class="breadcrumb breadcrumb-sm d-sm-block d-md-none"><a href="#">回到企業與金融</a> </div>
+
+                <div class="detail-main ">
+                    <div class="detail-sm-bg col-sm-12 d-lg-none ">
+                        <div class="pic"></div>
+                    </div>
                     <div class="row">
-                        <div class=" col-6 col-sm-6 col-lg-3 detail-cover px-5 mx-auto">
+                        <div class="col-8 col-sm-8 col-lg-3 detail-cover px-5 mx-auto my-4">
                             <div class="pic">
                                 <div class="pic-content">
-                                    <img src="./img/preview-img.jpg" alt="" >
+                                    <img src="./img/preview-img.jpg" alt="">
                                     <div class="overlay"></div>
-                                </div> 
+                                </div>
                             </div>
-                            <div class="detail-preview"><a href="#"><i class="fas fa-search"></i>立即預覽</a></div>
-                            
-                            <div class="detail-save"><a href="#"><i class="fas fa-arrow-to-bottom"></i>儲存預覽</a></div>
-                            <div class="total-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                    class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half"></i><span
-                                    class="rating-num">(442)</span></div>
+
+                            <div class="content d-flex flex-wrap">
+                                <div class="detail-preview  col-6 col-sm-6 col-md-6 col-lg-12 border-0"><a href="#"><i
+                                            class="fas fa-search"></i>立即預覽</a></div>
+                               <hr class="d-none d-lg-block">
+                                <div class="detail-save  col-6 col-sm-6 col-md-6 col-lg-12"><a href="#"><i
+                                            class="fas fa-arrow-to-bottom"></i>儲存預覽</a></div>
+                            </div>
+
+                            <div class="total-rating d-none d-lg-block"><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star-half"></i><span class="rating-num">(442)</span></div>
                         </div>
-                        <div class="col-lg-6 detail-product px-5" >
+                        <div class="col-lg-6 detail-product px-5">
                             <div class="special-deal">
                                 <!-- <div class="fa-tag" ></div> -->
                                 <i class="fas fa-tag"></i>
@@ -368,7 +425,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
 
                 </div>
             </div>
@@ -400,7 +457,7 @@
                     </div>
 
                 </div>
-                <div class="col-sm-6 col-md-6 order-sm-1 order-md-4 footer-logo pt-3 pb-3 px-0">
+                <div class="d-none d-md-block col-sm-6 col-md-6 order-sm-1 order-md-4 footer-logo pt-3 pb-3 px-0">
                     <div class="pic"><img src="./img/smlogo_v2.png" alt=""></div>
                 </div>
 
