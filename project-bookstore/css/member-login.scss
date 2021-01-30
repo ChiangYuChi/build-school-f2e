@@ -3,23 +3,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;1,200&family=Noto+Sans+TC:wght@100;300;400;500;700&display=swap');
 $color-brown :rgba(138, 105, 38, 1);
 $color-gray-1: rgba(176, 176, 176, 1);
-$color-gray-2:rgba(227,227,227, 1);
+$color-gray-2:rgba(227, 227, 227, 1);
 
 
-body{
+body {
     background-color: #f4f4f4;
 }
+
 .member {
 
     .row {
-     
-      &:nth-of-type(2){
-          background-color: white;
-          border: 2px solid $color-gray-2;
-      }
-     
+
+        &:nth-of-type(2) {
+            background-color: white;
+            border: 2px solid $color-gray-2;
+        }
+
         .breadcrumb-member {
-        padding: 0 0 25px 0px;
+            padding: 0 0 25px 0px;
 
             a {
                 color: $color-gray-1;
@@ -46,68 +47,79 @@ body{
             display: flex;
             flex-direction: column;
             padding: 25px 0;
-            .login-head{
-                display:flex;
+
+            .login-head {
+                display: flex;
                 justify-content: space-between;
-                .title{
+
+                .title {
                     font-size: 20px;
                     font-family: 'Noto Sans TC', sans-serif;
                     font-weight: 500;
-                 
-                    
+
+
                 }
-                .register{
+
+                .register {
                     font-size: 15px;
                     font-weight: 400px;
                     font-family: 'Noto Sans TC', sans-serif;
-                    
+
                     padding-top: 3px;
-                    a{
+
+                    a {
                         color: $color-brown;
                         padding-left: 5px;
                     }
                 }
 
             }
-            .input-group{
+
+            .input-group {
                 width: 100%;
-                
+
                 padding-top: 30px;
-             
-                label{
+
+                label {
                     width: 100%;
                     font-size: 17px;
                     font-family: 'Noto Sans TC', sans-serif;
                     font-weight: 400;
-                    display:flex;
+                    display: flex;
                     flex-direction: row;
                     flex-wrap: wrap;
                     justify-content: space-between;
                     margin-bottom: 0px;
-                   
-                    span{
+
+                    span {
                         padding: 5px 0;
-                        &:last-child{
+
+                        &:last-child {
                             color: $color-brown;
                         }
-                       a{
-                           font-size: 15px;
-                           color: $color-brown;
-                       }
+
+                        a {
+                            font-size: 15px;
+                            color: $color-brown;
+                        }
                     }
-                    input{
+
+                    input {
                         width: 100%;
                         padding: 11px;
                         border: 1px solid $color-gray-1;
                         border-radius: 5px;
                     }
-                 
+
                 }
-                span{font-size: 16px;
-                font-family: 'Noto Sans TC', sans-serif;
-                font-weight: 400;
+
+                span {
+                    font-size: 16px;
+                    font-family: 'Noto Sans TC', sans-serif;
+                    font-weight: 400;
                 }
-               #login{
+
+                #login {
                     width: 100%;
                     padding: 11px;
                     background-color: $color-brown;
@@ -118,7 +130,7 @@ body{
                     font-family: 'Noto Sans TC', sans-serif;
                     color: white;
                 }
-                
+
             }
 
 
