@@ -383,9 +383,10 @@ body {
 
 .member-logout .row .warning {
   font-family: 'Noto Sans TC', sans-serif;
-  font-size: 20px;
+  font-size: 18px;
   text-align: center;
   width: 100%;
+  font-weight: 400;
 }
 
 .member-logout .row .warning p {
