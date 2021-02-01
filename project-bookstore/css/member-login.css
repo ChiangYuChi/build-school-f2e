@@ -374,4 +374,105 @@ body {
 .member .row .breadcrumb-member a + a {
   padding: 0 15px;
 }
+
+.member .row .member-login {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 25px 0;
+}
+
+.member .row .member-login .login-head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.member .row .member-login .login-head .title {
+  font-size: 20px;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-weight: 500;
+}
+
+.member .row .member-login .login-head .register {
+  font-size: 15px;
+  font-weight: 400px;
+  font-family: 'Noto Sans TC', sans-serif;
+  padding-top: 3px;
+}
+
+.member .row .member-login .login-head .register a {
+  color: #8a6926;
+  padding-left: 5px;
+}
+
+.member .row .member-login .input-group {
+  width: 100%;
+  padding-top: 30px;
+}
+
+.member .row .member-login .input-group label {
+  width: 100%;
+  font-size: 17px;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-weight: 400;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 0px;
+}
+
+.member .row .member-login .input-group label span {
+  padding: 5px 0;
+}
+
+.member .row .member-login .input-group label span:last-child {
+  color: #8a6926;
+}
+
+.member .row .member-login .input-group label span a {
+  font-size: 15px;
+  color: #8a6926;
+}
+
+.member .row .member-login .input-group label input {
+  width: 100%;
+  padding: 11px;
+  border: 1px solid #b0b0b0;
+  border-radius: 5px;
+}
+
+.member .row .member-login .input-group span {
+  font-size: 16px;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-weight: 400;
+}
+
+.member .row .member-login .input-group #login {
+  width: 100%;
+  padding: 11px;
+  background-color: #8a6926;
+  border: none;
+  margin-top: 40px;
+  border-radius: 5px;
+  font-weight: 400;
+  font-family: 'Noto Sans TC', sans-serif;
+  color: white;
+}
 /*# sourceMappingURL=member-login.css.map */
