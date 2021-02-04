@@ -107,13 +107,14 @@
             opacity: 1;
         }
 
-        .content hr{
+        .content hr {
             width: 100%;
-            
+
         }
+
         .detail-preview {
             border-bottom: 2px solid #eeeeee;
-            
+
         }
 
         .detail-save {
@@ -338,12 +339,67 @@
             position: absolute;
 
         }
-      
+
+        .lightbox-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 999;
+            background: rgba(0, 0, 0, 0.6) !important;
+            display: none;
+        }
+
+        .show {
+            display: block;
+        }
+
+
+        .lightbox-item {
+            min-height: 80vh;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            border-radius: 0.3rem;
+        }
+
+        .lightbox-close {
+            font-size: 3rem;
+            transition: all 1s ease-in-out;
+            cursor: pointer;
+        }
+
+        .lightbox-control {
+            position: absolute;
+            font-size: 4rem;
+            color: white;
+            transition: all 1s linear;
+            cursor: pointer;
+        }
+
+        .lightbox-control .fas{
+            font-size: 40px;
+        }
+
+        .btnLeft {
+            top: 50%;
+            left: 3%;
+            transform: translateX(-60%);
+        }
+
+        .btnRight {
+            top: 50%;
+            right: 3%;
+            transform: translateX(60%);
+        }
+        .preview-img-container {
+            display: none;
+        }
     </style>
 </head>
 
 <body>
-
     <section class="book-detail">
         <div class="container">
             <div class="row ">
@@ -355,22 +411,40 @@
                 </div>
                 <div class="breadcrumb breadcrumb-sm d-sm-block d-md-none"><a href="#">回到企業與金融</a> </div>
                 <div class="detail-main ">
+                    <!-- 商品區塊 -->
                     <div class="detail-sm-bg col-sm-12 d-lg-none ">
                         <div class="pic"></div>
                     </div>
+                    <!-- 預覽圖區塊 -->
                     <div class="row">
                         <div class="col-8 col-sm-8 col-lg-3 detail-cover px-5 mx-auto my-4">
                             <div class="pic">
-                                <div class="pic-content">
-                                    <img src="./img/preview-img.jpg" alt="">
+                                <div class="pic-content preview-btn">
+                                    <img src="./img/preview-img-1.jpg" alt="" class="preview-img book-img">
                                     <div class="overlay"></div>
                                 </div>
                             </div>
+                            <div class="preview-img-container">
+                                <img src="./img/preview-img-2.png" class="book-img">
+                                <img src="./img/preview-img-3.png" class="book-img">
+                                <img src="./img/preview-img-4.png" class="book-img">
+                            </div>
+                            <div class="container-fluid ">
+                                <div class="row lightbox-container align-items-center">
+                                    <div class="col-11 col-md-8  mx-auto text-right lightbox-holder">
+                                        <span class="lightbox-close"><i class="fas fa-window-close"></i></span>
+                                        <div class="lightbox-item col-10 col-md-11 m-auto"></div>
+                                        <span class="lightbox-control btnLeft"><i class="fas fa-chevron-left"></i></span>
+                                        <span class="lightbox-control btnRight"><i class="fas fa-chevron-right"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+
 
                             <div class="content d-flex flex-wrap">
-                                <div class="detail-preview  col-6 col-sm-6 col-md-6 col-lg-12 border-0"><a href="#"><i
-                                            class="fas fa-search"></i>立即預覽</a></div>
-                               <hr class="d-none d-lg-block">
+                                <div class="detail-preview  col-6 col-sm-6 col-md-6 col-lg-12 border-0 preview-btn"><a
+                                        href="#"><i class="fas fa-search"></i>立即預覽</a></div>
+                                <hr class="d-none d-lg-block">
                                 <div class="detail-save  col-6 col-sm-6 col-md-6 col-lg-12"><a href="#"><i
                                             class="fas fa-arrow-to-bottom"></i>儲存預覽</a></div>
                             </div>
@@ -424,12 +498,11 @@
                             </div>
                         </div>
                     </div>
-
-
                 </div>
             </div>
         </div>
     </section>
+    <!-- footer -->
     <section class="footer px-5">
         <div class="container">
             <div class="row d-flex pt-5">
@@ -477,5 +550,52 @@
         integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous">
     </script>
 </body>
+
+<script>
+    let previewBtn = document.querySelectorAll(".preview-btn");
+    let lightbox = document.querySelector(".lightbox-container")
+    let lightboxItem = document.querySelector(".lightbox-item");
+    let lightboxClose = document.querySelector(".lightbox-close");
+    let images = document.querySelectorAll(".book-img");
+    let imageList = [];
+    let imageCounter = 0;
+    let btnLeft = document.querySelector('.btnLeft');
+    let btnRight = document.querySelector('.btnRight');
+    previewBtn.forEach(function (item) {
+        item.addEventListener("click", function () {
+            let img = document.querySelector(".preview-img").src;
+            lightboxItem.style.backgroundImage = `url(${img})`;
+            lightbox.classList.add("show");
+        })
+    })
+
+    lightboxClose.addEventListener("click", function () {
+        lightbox.classList.remove("show");
+    })
+
+    images.forEach(function (image) {
+    imageList.push(image.src);
+    console.log(imageList);
+  })
+
+
+    btnLeft.addEventListener('click', function () {
+        imageCounter--;
+        if (imageCounter < 0) {
+            imageCounter = imageList.length - 1;
+        }
+        lightboxItem.style.backgroundImage = `url(${imageList[imageCounter]})`;
+    })
+
+    btnRight.addEventListener('click', function () {
+    imageCounter++;
+    if (imageCounter >= imageList.length) {
+      imageCounter = 0;
+    }
+    lightboxItem.style.backgroundImage = `url(${imageList[imageCounter]})`;
+  })
+
+
+</script>
 
 </html>
